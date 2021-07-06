@@ -7,6 +7,7 @@ let g = null; // for zoom handler
 let simulation = null;
 let graph_nodes = null;
 let graph_links = null;
+let graph_paths = null;
 let minWeight, maxWeight = null;
 let minNodeMeasure, maxNodeMeasure = null;
 let width = 600;
@@ -42,14 +43,15 @@ let tag_dict = {
 let tag_list = [];
 Object.keys(tag_filter).map(key => tag_filter[key] ? tag_list = tag_list.concat(tag_dict[key]): null);
 
-let edgeWeightColor = {
-    'tag': (d) => d3.interpolateRgb(d.source.color, d.target.color)(0.5),
-    'weight': (d) => linkColorScale(d.weight)
-};
+let edgeWeightColor = (d) => {
+    if (edgeWeightColorSelection === 'tag') {
+        return d3.interpolateRgb(d.source.color, d.target.color)(0.5);
+    } else {
+        return linkColorScale(d.weight);
+    }
+}
 
 window.onloadFuncs.push(() => {
-    svg = d3.select("#graph")
-        .attr("viewBox", [0,0,width,height]);
     load_graph();
 });
 
@@ -59,9 +61,6 @@ let load_graph = () => {
         nodes = data.nodes;
         links = data.links;
         links.forEach(d => {linkIndex[d.source + ',' +d.target] = 1});
-        ego_nodes = data.nodes.filter(d => d.ego_ai == 1);
-        let ego_node_list = ego_nodes.reduce((a,b) => a.concat(b.id), []);
-        ego_links = data.nodes.filter(d => ego_node_list.includes(d.source) || ego_node_list.includes(d.target));
         let weightRange = d3.extent(links.reduce((a,b) => a.concat(b.weight), []));
         minWeight = weightRange[0];
         maxWeight = weightRange[1] + 1;
@@ -69,6 +68,7 @@ let load_graph = () => {
         minNodeMeasure = nodeMeasureRange[0];
         maxNodeMeasure = nodeMeasureRange[1];
         create_graph();
+        update();
     })
 }
 
@@ -78,15 +78,10 @@ let linkOpacityScale = null;
 let nodeSizeScale = null;
 let nodeFontScale = null;
 
-let linkArc = d => {
-    let r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
-    return `
-        M${d.source.x},${d.source.y}
-        A${r},${r} 0 0,1 ${d.target.x},${d.target.y}
-    `;
-}
-
 let create_graph = () => {
+
+    svg = d3.select("#graph")
+        .attr("viewBox", [0,0,width,height]);
 
     linkColorScale = d3.scaleSequential()
         .domain([minWeight,maxWeight])
@@ -118,69 +113,22 @@ let create_graph = () => {
         .force("center", d3.forceCenter(width/2,height/2));
     
     graph_links = g.append('g')
-        .selectAll('path')
-        .data(links)
-        .enter()
-        .append('path')
-            .attr('stroke', d => edgeWeightColor[edgeWeightColorSelection](d))
-            .attr('stroke-width', d => linkWidthScale(d.weight))
-            .attr('fill','none')
-            .attr('opacity', d => linkOpacityScale(d.weight))
+        .selectAll('.path')
+        .data(links, d => d.id);
 
-    graph_links.append('title')
-        .text(d => `${d.source.id}—${d.target.id}, weight: ${d.weight}`)
     
     graph_nodes = g.append('g')
         .selectAll('g')
-            .attr('fill','currentColor')
-            .attr('stroke-linecap','round')
-            .attr('stroke-linejoin','round')
-        .data(nodes)
-        .enter()
-        .append('g')
-        .call(drag(simulation));
+        .data(nodes, d => d.id);
+    
+}
 
-    graph_nodes.append('circle')
-        .attr('r', d => nodeMeasureScale(d[node_measure]))
-        .attr('fill', d => d.color)
-        .attr('stroke','#111111')
-        .attr('stroke-width', 1.5);
-    
-    graph_nodes.append('text')
-        .attr('font-size', d => nodeFontScale(d[node_measure]))
-        .attr('color', '#111111')
-        .attr("class", "text-outline")	
-        .attr("text-anchor",'middle')
-        .text(d => d.id)
-    
-    graph_nodes.append('title')
-        .text(d => `id: ${d.id}, ${node_measure}: ${d[node_measure]}`)
-
-    graph_nodes
-        .on('click', (event,d) => {
-            if (!nodeClicked) {
-                graph_nodes
-                .transition().duration(200)
-                .attr('opacity', (o) => o.id === d.id | linkIndex[o.id+','+d.id] == 1 | linkIndex[d.id+','+o.id] == 1 ? 1 : 0.1);
-                graph_links
-                .transition().duration(200)
-                .attr('opacity', (o) => o.source.id === d.id | o.target.id === d.id ? 1 : 0.1);
-                nodeClicked = true;
-            } else {
-                graph_nodes
-                .transition().duration(200)
-                .attr('opacity', 1);
-                graph_links
-                .transition().duration(200)
-                .attr('opacity', d => linkOpacityScale(d.weight));
-                nodeClicked = false;
-            }
-        });
-    
-    simulation.on('tick', ticked);
-
-    svg.call(zoom);
-    
+let linkArc = d => {
+    let r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
+    return `
+        M${d.source.x},${d.source.y}
+        A${r},${r} 0 0,1 ${d.target.x},${d.target.y}
+    `;
 }
 
 let ticked = () => {
@@ -221,22 +169,9 @@ let zoom = d3.zoom()
     .scaleExtent([0.1,10]);
 
 let update = () => {
-    graph_links = graph_links.data(links, d => d.id);
-    graph_links.exit().remove();
-    let new_graph_links = graph_links.enter()
-        .append('path')
-        .attr('stroke', d => edgeWeightColor[edgeWeightColorSelection](d))
-        .attr('stroke-width', d => linkWidthScale(d.weight))
-        .attr('fill','none')
-        .attr('opacity', d => linkOpacityScale(d.weight));
-    
-    new_graph_links.append('title')
-        .text(d => `${d.source.id}—${d.target.id}, weight: ${d.weight}`);
-
-    graph_links = graph_links.merge(new_graph_links);
 
     graph_nodes = graph_nodes.data(nodes, d => d.id);
-    graph_nodes.exit().remove();
+
     let new_graph_nodes = graph_nodes.enter()
         .append('g')
 
@@ -280,20 +215,39 @@ let update = () => {
             }
         });
 
-        new_graph_nodes.call(drag(simulation));
+    new_graph_nodes.call(drag(simulation));
+
+    graph_nodes.exit().remove();
 
     graph_nodes = graph_nodes.merge(new_graph_nodes);
-    console.log(graph_links);
+
+    graph_links = graph_links.data(links, d => d.id);
+
+    let new_graph_links = graph_links.enter()
+        .append('path')
+        .attr('fill','none')
+        .attr('stroke', d => edgeWeightColor(d))
+        .attr('stroke-width', d => linkWidthScale(d.weight))
+        .attr('opacity', d => linkOpacityScale(d.weight));
+    
+    new_graph_links.append('title')
+        .text(d => `${d.source.id}—${d.target.id}, weight: ${d.weight}`);
+
+    graph_links.exit().remove();
+
+    graph_links = graph_links.merge(new_graph_links);
 
     simulation
         .nodes(nodes)
+        .on('tick', ticked);
+        
+    simulation
         .force('link', d3.forceLink(links).id(d => d.id))
         .force('charge', d3.forceManyBody().strength(d => nodeMeasureScale(d[node_measure]) * -20))
         .force('collide',d3.forceCollide(d => nodeMeasureScale(d[node_measure]) + 2))
         .force("center", d3.forceCenter(width/2,height/2))
 
-    simulation.on('tick', ticked);
-    simulation.restart();
+    simulation.alpha(1).alphaTarget(0).restart();
 }
 
 let filterEgoGraph = (checked) => {
@@ -331,12 +285,17 @@ let updateNodeMeasure = (value) => {
         .attr('r', d => nodeMeasureScale(d[node_measure]));
     
     graph_nodes.select('title')
-        .text(d => 'id: ' + d.id + ', ' + node_measure + ': ' + d[node_measure])
-    
+        .text(d => 'id: ' + d.id + ', ' + node_measure + ': ' + d[node_measure]);
+
     update();
 }
 
 let updateEdgeColor = (value) => {
     edgeWeightColorSelection = value;
+    
+    graph_links.enter()
+        .append('path')
+        .attr('stroke', d => 'edgeWeightColor(d)');
+
     update();
 }
