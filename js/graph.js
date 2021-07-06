@@ -83,6 +83,8 @@ let create_graph = () => {
     svg = d3.select("#graph")
         .attr("viewBox", [0,0,width,height]);
 
+    svg.call(zoom);
+
     linkColorScale = d3.scaleSequential()
         .domain([minWeight,maxWeight])
         .range(['#87CEFA','#00008B']);
