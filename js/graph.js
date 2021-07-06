@@ -44,6 +44,7 @@ let tag_list = [];
 Object.keys(tag_filter).map(key => tag_filter[key] ? tag_list = tag_list.concat(tag_dict[key]): null);
 
 let edgeWeightColor = (d) => {
+    console.log(edgeWeightColorSelection);
     if (edgeWeightColorSelection === 'tag') {
         return d3.interpolateRgb(d.source.color, d.target.color)(0.5);
     } else {
@@ -115,7 +116,7 @@ let create_graph = () => {
         .force("center", d3.forceCenter(width/2,height/2));
     
     graph_links = g.append('g')
-        .selectAll('.path')
+        .selectAll('path')
         .data(links, d => d.id);
 
     
@@ -200,19 +201,19 @@ let update = () => {
         .on('click', (event,d) => {
             if (!nodeClicked) {
                 graph_nodes
-                .transition().duration(200)
-                .attr('opacity', (o) => o.id === d.id | linkIndex[o.id+','+d.id] == 1 | linkIndex[d.id+','+o.id] == 1 ? 1 : 0.1);
+                    .transition().duration(200)
+                    .attr('opacity', (o) => o.id === d.id | linkIndex[o.id+','+d.id] == 1 | linkIndex[d.id+','+o.id] == 1 ? 1 : 0.1);
                 graph_links
-                .transition().duration(200)
-                .attr('opacity', (o) => o.source.id === d.id | o.target.id === d.id ? 1 : 0.1);
+                    .transition().duration(200)
+                    .attr('opacity', (o) => o.source.id === d.id | o.target.id === d.id ? 1 : 0.1);
                 nodeClicked = true;
             } else {
                 graph_nodes
-                .transition().duration(200)
-                .attr('opacity', 1);
+                    .transition().duration(200)
+                    .attr('opacity', 1);
                 graph_links
-                .transition().duration(200)
-                .attr('opacity', d => linkOpacityScale(d.weight));
+                    .transition().duration(200)
+                    .attr('opacity', d => linkOpacityScale(d.weight));
                 nodeClicked = false;
             }
         });
@@ -288,16 +289,11 @@ let updateNodeMeasure = (value) => {
     
     graph_nodes.select('title')
         .text(d => 'id: ' + d.id + ', ' + node_measure + ': ' + d[node_measure]);
-
-    update();
 }
 
 let updateEdgeColor = (value) => {
     edgeWeightColorSelection = value;
-    
-    graph_links.enter()
-        .append('path')
-        .attr('stroke', d => 'edgeWeightColor(d)');
 
-    update();
+    svg.selectAll('path')
+        .attr('stroke', d => edgeWeightColor(d));
 }
