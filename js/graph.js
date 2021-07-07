@@ -12,10 +12,11 @@ let minWeight, maxWeight = null;
 let minNodeMeasure, maxNodeMeasure = null;
 let width = 600;
 let height = 600;
-let node_measure = 'frequency'
+let node_measure = 'frequency';
 let nodeClicked = false;
 let egoCheck = false;
 let edgeWeightColorSelection = 'tag';
+let forceMultiplier = -20;
 let tag_filter = {
     'TECH': true,
     'ORG': true,
@@ -110,10 +111,7 @@ let create_graph = () => {
         .attr('class','everything');
 
     simulation = d3.forceSimulation(nodes)
-        .force('link', d3.forceLink(links).id(d => d.id))
-        .force('charge', d3.forceManyBody().strength(d => nodeMeasureScale(d[node_measure]) * -20))
-        .force('collide',d3.forceCollide(d => nodeMeasureScale(d[node_measure]) + 2))
-        .force("center", d3.forceCenter(width/2,height/2));
+        .force('link', d3.forceLink(links).id(d => d.id));
     
     graph_links = g.append('g')
         .selectAll('path')
@@ -246,9 +244,9 @@ let update = () => {
         
     simulation
         .force('link', d3.forceLink(links).id(d => d.id))
-        .force('charge', d3.forceManyBody().strength(d => nodeMeasureScale(d[node_measure]) * -20))
+        .force('charge', d3.forceManyBody().strength(d => nodeMeasureScale(d[node_measure]) * forceMultiplier))
         .force('collide',d3.forceCollide(d => nodeMeasureScale(d[node_measure]) + 2))
-        .force("center", d3.forceCenter(width/2,height/2))
+        .force("center", d3.forceCenter(width/2,height/2));
 
     simulation.alpha(1).alphaTarget(0).restart();
 }
@@ -296,4 +294,9 @@ let updateEdgeColor = (value) => {
 
     svg.selectAll('path')
         .attr('stroke', d => edgeWeightColor(d));
+}
+
+let updateForceMultiplier = (value) => {
+    forceMultiplier = value * -1;
+    update();
 }

@@ -25,12 +25,11 @@
             .menu > * {
                 font-size: 12px !important;
             }
-            .menu > div {
-                padding-bottom: 1em;
+            .subcontainer {
+                padding-bottom: .5em;
                 margin: 0;
-            }
-            .last-item {
-                padding-bottom: 0 !important;
+                display: flex;
+                flex-direction: column;
             }
             h3 {
                 margin: 0;
@@ -74,13 +73,21 @@
                 padding: 0;
                 margin: 0;
             }
+            .range-container {
+                display: flex;
+            }
+            .form-range {
+                position: relative;
+                margin: 0 8px;
+                top: -2.5px;
+            }
         </style>
     </head>
     <body>
         <svg style="width: 100%; height: 100%; border: 1px solid black;" id='graph'></svg>
         <div class="container menu">
             <h3>Singapore AI Governance Concept Map</h3>
-            <div>
+            <div class="subcontainer">
                 <label class="form-label">Node size:</label>
                 <select id="nodeMeasure" class="form-select form-select-sm" aria-label=".form-select-sm node-measure" oninput="updateNodeMeasure(value);">
                     <option value="frequency" selected>Frequency</option>
@@ -91,14 +98,14 @@
                     <option value="eigenvector_centrality">Eigenvector centrality</option>
                 </select>
             </div>
-            <div class="edge-setting">
+            <div class="subcontainer">
                 <label class="form-label">Edge colour:</label>
                 <select id="edgeColor" class="form-select form-select-sm" aria-label=".form-select-sm edge-color" oninput="updateEdgeColor(value);">
                     <option value="tag" selected>Tag</option>
                     <option value="weight">Co-occurrence</option>
                 </select>
             </div>
-            <div class="filter-setting">
+            <div class="subcontainer">
                 <label class="form-label">Filters:</label>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" onchange="filterEgoGraph(this.checked)">
@@ -109,11 +116,11 @@
                 <div class="accordion" id="tagFilterContainer">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="tagFilterHeader">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tagFilter" aria-expanded="true" aria-controls="tagFilter">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tagFilter" aria-expanded="true" aria-controls="tagFilter">
                             Tag filters
                             </button>
                         </h2>
-                        <div id="tagFilter" class="accordion-collapse collapse show" aria-labelledby="tagFilterHeader" data-bs-parent="#tagFilterContainer">
+                        <div id="tagFilter" class="accordion-collapse collapse" aria-labelledby="tagFilterHeader" data-bs-parent="#tagFilterContainer">
                             <div class="accordion-body btn-group-vertical">
                                 <div>
                                     <input class="form-check-input" type="checkbox" value="TECH" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
@@ -200,7 +207,15 @@
                     </div>
                 </div>
             </div>
-            <div class="filter-setting">
+            <div class="subcontainer">
+                <label for="customRange3" class="form-label">Repulsion:</label>
+                <div class="range-container">
+                    <span>10</span>
+                    <input type="range" class="form-range" min="10" max="100" step="10" value="20" id="forceRange" onchange="updateForceMultiplier(value)">
+                    <span>100</span>
+                </div>
+            </div>
+            <div class="subcontainer">
                 <div class="accordion" id="moreInfoContainer">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="moreInfoHeader">
