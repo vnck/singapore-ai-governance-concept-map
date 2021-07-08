@@ -1,6 +1,9 @@
 <html>
     <head>
         <title>IRP Thesis - AI Governance Map</title>
+        <!-- favicon -->
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+        
         <!-- bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <!-- JavaScript Bundle with Popper -->
@@ -9,34 +12,39 @@
         <!-- d3.js -->
         <script src="https://d3js.org/d3.v6.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
+
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
         <!-- my scripts -->
         <script src="js/main.js"></script>
         <script src="js/graph.js"></script>
         <style>
-            .menu {
-                width: 250px;
+            html {
+                scroll-behavior: smooth;
+            }
+            .visualisation-container {
+                position: relative;
+                height: 98%;
+            }
+            .parent-container {
+                width: 210px;
                 position: absolute;
-                left: 20;
-                top: 20;
                 padding: 8px;
                 background-color: white;
                 border: 1px solid black;
+                border-radius: .25rem;
             }
-            .menu > * {
+            .parent-container > * {
                 font-size: 12px !important;
+                margin: 0;
+                padding: 0;
             }
             .subcontainer {
-                padding-bottom: .5em;
+                padding-top: .5em;
                 margin: 0;
                 display: flex;
                 flex-direction: column;
-            }
-            h3 {
-                margin: 0;
-                padding: 0;
-                margin-bottom: 8px;
-                /* font-size: small !important; */
-                text-decoration: underline;
             }
             .form-label {
                 margin-bottom: 4px;
@@ -66,13 +74,6 @@
             .accordion-body {
                 padding: 8px;
             }
-            #moreInfo {
-                padding: 8px;
-            }
-            #moreInfo > * {
-                padding: 0;
-                margin: 0;
-            }
             .range-container {
                 display: flex;
             }
@@ -81,153 +82,207 @@
                 margin: 0 8px;
                 top: -2.5px;
             }
+            .accordion-button {
+                padding: .25rem .5rem;
+                padding-right: .75rem;
+            }
+            .accordion-button:not(.collapsed) {
+                color: black;
+                background-color: white;
+            }
+            .parent-header .accordion-button:not(.collapsed), .parent-header .accordion-button:focus {
+                box-shadow: none;
+            }
+            .accordion-button::after {
+                width: 1rem;
+                height: 1rem;
+                background-size: 1rem;
+            }
+            .content-container {
+                display: flex;
+                padding-top: 2rem;
+                margin-left: 4rem;
+                background: white;
+            }
+            .content {
+                width: 60%;
+                padding: .5rem;
+            }
+            h3 {
+                text-decoration: underline;
+            }
+            /* mobile styling */
+            @media (max-width: 767.98px) {
+                .content-container {
+                margin-left: 2rem;
+                }
+                .content {
+                    width: 90%;
+                }
+            }
         </style>
     </head>
     <body>
-        <svg style="width: 100%; height: 100%; border: 1px solid black;" id='graph'></svg>
-        <div class="container menu">
-            <h3>Singapore AI Governance Concept Map</h3>
-            <div class="subcontainer">
-                <label class="form-label">Node size:</label>
-                <select id="nodeMeasure" class="form-select form-select-sm" aria-label=".form-select-sm node-measure" oninput="updateNodeMeasure(value);">
-                    <option value="frequency" selected>Frequency</option>
-                    <option value="degree">Degree</option>
-                    <option value="degree_centrality">Degree centrality</option>
-                    <option value="betweenness_centrality">Betweenness centrality</option>
-                    <option value="closeness_centrality">Closeness centrality</option>
-                    <option value="eigenvector_centrality">Eigenvector centrality</option>
-                </select>
-            </div>
-            <div class="subcontainer">
-                <label class="form-label">Edge colour:</label>
-                <select id="edgeColor" class="form-select form-select-sm" aria-label=".form-select-sm edge-color" oninput="updateEdgeColor(value);">
-                    <option value="tag" selected>Tag</option>
-                    <option value="weight">Co-occurrence</option>
-                </select>
-            </div>
-            <div class="subcontainer">
-                <label class="form-label">Filters:</label>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" onchange="filterEgoGraph(this.checked)">
-                    <label class="form-check-label" for="flexCheckDefault">
-                    AI ego-network
-                    </label>
-                </div>
-                <div class="accordion" id="tagFilterContainer">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="tagFilterHeader">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tagFilter" aria-expanded="true" aria-controls="tagFilter">
-                            Tag filters
-                            </button>
-                        </h2>
-                        <div id="tagFilter" class="accordion-collapse collapse" aria-labelledby="tagFilterHeader" data-bs-parent="#tagFilterContainer">
-                            <div class="accordion-body btn-group-vertical">
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="TECH" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
-                                    <label class="form-check-label" for="flexCheckDefault"> 
-                                        <svg width="1em" height="1em">
-                                            <circle cx=".5em" cy=".4em" r="4" fill="#1E90FF"/>
-                                        </svg>
-                                        Technology</label>
+        <div class="visualisation-container">
+            <svg style="width: 100%; height: 100%; border: 1px solid black;" id='graph'></svg>
+            <div class="accordion" id="settingsContainer">
+                <div class="accordion-item parent-container" style="left: 20;
+                top: 20;">
+                    <h2 class="accordion-header parent-header" id="settingsHeader">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#settings" aria-expanded="true" aria-controls="settings">
+                            Visualisation Settings
+                        </button>
+                    </h2>
+                    <div id="settings" class="accordion-collapse collapse show" aria-labelledby="settingsHeader" data-bs-parent="#settingsContainer">
+                        <div class="subcontainer">
+                            <label class="form-label">Node size:</label>
+                            <select id="nodeMeasure" class="form-select form-select-sm" aria-label=".form-select-sm node-measure" oninput="updateNodeMeasure(value);">
+                                <option value="frequency" selected>Frequency</option>
+                                <option value="degree">Degree</option>
+                                <option value="degree_centrality">Degree centrality</option>
+                                <option value="betweenness_centrality">Betweenness centrality</option>
+                                <option value="closeness_centrality">Closeness centrality</option>
+                                <option value="eigenvector_centrality">Eigenvector centrality</option>
+                            </select>
+                        </div>
+                        <div class="subcontainer">
+                            <label class="form-label">Edge colour:</label>
+                            <select id="edgeColor" class="form-select form-select-sm" aria-label=".form-select-sm edge-color" oninput="updateEdgeColor(value);">
+                                <option value="tag" selected>Tag</option>
+                                <option value="weight">Co-occurrence</option>
+                            </select>
+                        </div>
+                        <div class="subcontainer">
+                            <label class="form-label">Filters:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="1" id="flexCheckDefault" onchange="filterEgoGraph(this.checked)">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                AI ego-network
+                                </label>
+                            </div>
+                            <div class="accordion" id="tagFilterContainer">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="tagFilterHeader">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tagFilter" aria-expanded="true" aria-controls="tagFilter">
+                                        Tag filters
+                                        </button>
+                                    </h2>
+                                    <div id="tagFilter" class="accordion-collapse collapse" aria-labelledby="tagFilterHeader" data-bs-parent="#tagFilterContainer">
+                                        <div class="accordion-body btn-group-vertical">
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="TECH" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault"> 
+                                                    <svg width="1em" height="1em">
+                                                        <circle cx=".5em" cy=".4em" r="4" fill="#1E90FF"/>
+                                                    </svg>
+                                                    Technology</label>
+                                            </div>
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="ORG" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    <svg width="1em" height="1em">
+                                                        <circle cx=".5em" cy=".4em" r="4" fill="#40E0D0"/>
+                                                    </svg>
+                                                    Organisations</label>
+                                            </div>
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="INST" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    <svg width="1em" height="1em">
+                                                        <circle cx=".5em" cy=".4em" r="4" fill="#008080"/>
+                                                    </svg>
+                                                    Institutions</label>
+                                            </div>
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="GOVT" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    <svg width="1em" height="1em">
+                                                        <circle cx=".5em" cy=".4em" r="4" fill="#FF69B4"/>
+                                                    </svg>
+                                                    Government</label>
+                                            </div>
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="POLICY" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    <svg width="1em" height="1em">
+                                                        <circle cx=".5em" cy=".4em" r="4" fill="#FFC0CB"/>
+                                                    </svg>
+                                                    Policy</label>
+                                            </div>
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="ETHICS" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    <svg width="1em" height="1em">
+                                                        <circle cx=".5em" cy=".4em" r="4" fill="#FF8C00"/>
+                                                    </svg>
+                                                    Ethical Topics</label>
+                                            </div>
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="LOC" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    <svg width="1em" height="1em">
+                                                        <circle cx=".5em" cy=".4em" r="4" fill="#90EE90"/>
+                                                    </svg>
+                                                    Locations</label>
+                                            </div>
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="PERSONS" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    <svg width="1em" height="1em">
+                                                        <circle cx=".5em" cy=".4em" r="4" fill="#FFDAB9"/>
+                                                    </svg>
+                                                    Persons</label>
+                                            </div>
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="TEMPORAL" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    <svg width="1em" height="1em">
+                                                        <circle cx=".5em" cy=".4em" r="4" fill="#FFD700"/>
+                                                    </svg>
+                                                    Temporal</label>
+                                            </div>
+                                            <div>
+                                                <input class="form-check-input" type="checkbox" value="OBJECTS" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
+                                                <label class="form-check-label" for="flexCheckDefault">
+                                                    <svg width="1em" height="1em">
+                                                        <circle cx=".5em" cy=".4em" r="4" fill="#9370DB"/>
+                                                    </svg>
+                                                    Objects</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="ORG" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <svg width="1em" height="1em">
-                                            <circle cx=".5em" cy=".4em" r="4" fill="#40E0D0"/>
-                                        </svg>
-                                        Organisations</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="INST" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <svg width="1em" height="1em">
-                                            <circle cx=".5em" cy=".4em" r="4" fill="#008080"/>
-                                        </svg>
-                                        Institutions</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="GOVT" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <svg width="1em" height="1em">
-                                            <circle cx=".5em" cy=".4em" r="4" fill="#FF69B4"/>
-                                        </svg>
-                                        Government</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="POLICY" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <svg width="1em" height="1em">
-                                            <circle cx=".5em" cy=".4em" r="4" fill="#FFC0CB"/>
-                                        </svg>
-                                        Policy</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="ETHICS" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <svg width="1em" height="1em">
-                                            <circle cx=".5em" cy=".4em" r="4" fill="#FF8C00"/>
-                                        </svg>
-                                        Ethical Topics</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="LOC" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <svg width="1em" height="1em">
-                                            <circle cx=".5em" cy=".4em" r="4" fill="#90EE90"/>
-                                        </svg>
-                                        Locations</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="PERSONS" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <svg width="1em" height="1em">
-                                            <circle cx=".5em" cy=".4em" r="4" fill="#FFDAB9"/>
-                                        </svg>
-                                        Persons</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="TEMPORAL" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <svg width="1em" height="1em">
-                                            <circle cx=".5em" cy=".4em" r="4" fill="#FFD700"/>
-                                        </svg>
-                                        Temporal</label>
-                                </div>
-                                <div>
-                                    <input class="form-check-input" type="checkbox" value="OBJECTS" id="flexCheckDefault" checked onchange="filterTags(value,this.checked)">
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        <svg width="1em" height="1em">
-                                            <circle cx=".5em" cy=".4em" r="4" fill="#9370DB"/>
-                                        </svg>
-                                        Objects</label>
-                                </div>
+                            </div>
+                        </div>
+                        <div class="subcontainer">
+                            <label for="customRange3" class="form-label">Repulsion:</label>
+                            <div class="range-container">
+                                <span>10</span>
+                                <input type="range" class="form-range" min="10" max="100" step="10" value="20" id="forceRange" onchange="updateForceMultiplier(value)">
+                                <span>100</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="subcontainer">
-                <label for="customRange3" class="form-label">Repulsion:</label>
-                <div class="range-container">
-                    <span>10</span>
-                    <input type="range" class="form-range" min="10" max="100" step="10" value="20" id="forceRange" onchange="updateForceMultiplier(value)">
-                    <span>100</span>
-                </div>
+            <div id="titleHeader" class="title-header parent-container" style="bottom: 0; left: 20; width: max-content; padding: .5rem 1rem; border-bottom: white; border-radius: .25em .25em 0 0" type="button">
+                <p>Singapore AI Governance Concept Map (2021) <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                  </svg></span></p>
             </div>
-            <div class="subcontainer">
-                <div class="accordion" id="moreInfoContainer">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="moreInfoHeader">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#moreInfo" aria-expanded="true" aria-controls="moreInfo">
-                            About the Project
-                            </button>
-                        </h2>
-                        <div id="moreInfo" class="accordion-collapse collapse" aria-labelledby="moreInfoHeader" data-bs-parent="#moreInfoContainer">
-                            <p>By Ivan Chuang, in fulfillment of SUTD MUSPP Independent Research Project (2021).</p>
-                        </div>
-                    </div>
+        </div>
+        <div class="content-container">
+            <div class="content">
+                <div class="introduction">
+                    <h3 id="introHeader">A Singapore AI Governance Concept Map</h3>
+                    <p>This semantic network maps out the core concepts that emerge from a content analysis of publications by the Singapore government on the topic of AI governance.</p>
+                    <p>A total of 448 publications were drawn from 79 different arms of the Singapore government—16 ministries, 58 statutory boards, and 5 other government offices. The publications comprise of 114 documents, 282 speeches, and 52 parliamentary QnAs.</p>
                 </div>
+                <!-- <div class="authorship">
+                    <h4>Authorship</h4>
+                    <p>Ivan Chuang, in fulfillment of final thesis for M.Sc. Urban Science, Planning and Policy</br>@ Singapore University of Technology and Design (2021)</p>
+                    <p>Supervised by Professor Lim Sun Sun.</p>
+                </div> -->
             </div>
         </div>
     </body>

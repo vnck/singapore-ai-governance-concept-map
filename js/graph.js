@@ -53,7 +53,7 @@ let edgeWeightColor = (d) => {
     }
 }
 
-window.onloadFuncs.push(() => {
+$(document).ready(() => {
     load_graph();
 });
 
@@ -87,9 +87,9 @@ let create_graph = () => {
 
     svg.call(zoom);
 
-    linkColorScale = d3.scaleSequential()
+    linkColorScale = d3.scaleLinear()
         .domain([minWeight,maxWeight])
-        .range(['#87CEFA','#00008B']);
+        .range(['LightSkyBlue','DarkBlue']);
 
     linkWidthScale = d3.scaleLinear()
         .domain([minWeight,maxWeight])
