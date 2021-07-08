@@ -9,14 +9,22 @@ $(document).ready(() => {
         $("#backUpContainer").fadeIn('fast');
     });
 
+    let sw = true;
     $(window).scroll(() => { 
-        if ($(this).scrollTop() > 100) { 
-            $("#backUpContainer:hidden").css('visibility','visible');   
-            $("#backUpContainer:hidden").fadeIn('fast');  
-        } 
-        else {     
-            $("#backUpContainer:visible").fadeOut("fast"); 
-        }  
+        if (sw) {
+            sw = false;
+            setTimeout(() => {
+                if ($(this).scrollTop() > 100) { 
+                    $("#backUpContainer:hidden").css('visibility','visible');   
+                    $("#backUpContainer:hidden").fadeIn('fast');
+                    sw=true;
+                } 
+                else {     
+                    $("#backUpContainer:visible").fadeOut("fast");
+                    sw=true;
+                }
+            }, 200);  
+        }
     });
 
     $('#backUpContainer').on('click', e => {
