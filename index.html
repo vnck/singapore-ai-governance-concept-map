@@ -98,26 +98,66 @@
                 height: 1rem;
                 background-size: 1rem;
             }
+            @keyframes float-down {
+                0% {
+                    transform: translate(0px, 0px);
+                }
+                50% {
+                    transform: translate(0px, 4px);
+                }
+                100% {
+                    transform: translate(0px, 0px);
+                }
+            }
+            .float-down {
+                transform: translate(0px, 0px);
+	            animation: float-down 3s ease-in-out infinite;
+            }
+            @keyframes float-up {
+                0% {
+                    transform: translate(0px, 0px);
+                }
+                50% {
+                    transform: translate(0px, -4px);
+                }
+                100% {
+                    transform: translate(0px, 0px);
+                }
+            }
+            .float-up {
+                transform: translate(0px, 0px);
+	            animation: float-up 3s ease-in-out infinite;
+            }
             .content-container {
                 display: flex;
-                padding-top: 2rem;
-                margin-left: 4rem;
                 background: white;
+                position: relative;
             }
             .content {
-                width: 60%;
+                width: 54%;
+                padding-top: 2rem;
+                margin-left: 4rem;
+                margin-bottom: 8rem;
+            }
+            #backUpContainer {
+                position: fixed;
+                width: max-content;
+                right: 20;
+                bottom: 20;
+                visibility: hidden;
             }
             h3 {
                 text-decoration: underline;
                 padding-bottom: 2rem;
             }
+            .paragraph {
+                padding-bottom: 1rem;
+            }
             /* mobile styling */
             @media (max-width: 900px) {
-                .content-container {
-                margin-left: 2rem;
-                }
                 .content {
                     width: 90%;
+                    margin-left: 2rem;
                 }
             }
         </style>
@@ -255,29 +295,41 @@
                             </div>
                         </div>
                         <div class="subcontainer">
-                            <label for="customRange3" class="form-label">Repulsion:</label>
+                            <label class="form-label">Repulsion:</label>
                             <div class="range-container">
                                 <span>10</span>
                                 <input type="range" class="form-range" min="10" max="100" step="10" value="20" id="forceRange" onchange="updateForceMultiplier(value)">
                                 <span>100</span>
                             </div>
                         </div>
+                        <div class="subcontainer">
+                            <label class="form-label">Tip!</label>
+                            <p style="padding: 0 0 .5rem .5rem; margin: 0;">Click on a node to highlight it and its neighbours.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="titleHeader" class="title-header parent-container" style="bottom: 0; left: 20; width: max-content; padding: .5rem 1rem; border-bottom: white; border-radius: .25em .25em 0 0" type="button">
-                <p>Singapore AI Governance Concept Map (2021) <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+            <div id="titleHeader" class="title-header parent-container" style="bottom: 0; left: 20; width: max-content; padding: .5rem 1rem; border-bottom: white; border-radius: .25em .25em 0 0; cursor: pointer;">
+                <p>Singapore AI Governance Concept Map (2021) <span style="padding-left: .2rem;"><svg class="float-down" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
                   </svg></span></p>
             </div>
         </div>
         <div class="content-container">
+            <div id="backUpContainer" class="parent-container" style="cursor: pointer;">
+                <span>Back up</span><span style="padding-left: .2rem;"><svg class="float-up" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg></span>
+            </div>
             <div class="content">
-                <div class="introduction">
+                <div class="paragraph">
                     <h3 id="introHeader">A Singapore AI Governance Concept Map</h3>
                     <p>The Singapore government endeavours to make Artificial Intelligence (AI) a core national technology. Singaporeans will find AI increasingly interlacing in their everyday life. Yet, AI evoked is more than just a neutral technology, instead serving too as a socio-technical imaginary, a method to construct and promote certain possible urban futures.</p>
                     <p>Hence, this project seeks to map out the concepts of AI evoked by the Singapore government, charting connections between disparate bodies of knowledge distributed across the governmental body's many arms.</p>
-                    <p>Such a semantic network will map out of the core concepts that emerge from a content analysis of 448 publications drawn from 79 different arms of the Singapore government—16 ministries, 58 statutory boards, and 5 other governmental offices. The collection comprises 114 documents, 282 speeches, and 52 parliamentary QnAs.</p>
+                </div>
+                <div class="paragraph">
+                    <h4>The data</h4>
+                    <p>The semantic network was constructed from a content analysis of 448 publications drawn from 79 different arms of the Singapore government—16 ministries, 58 statutory boards, and 5 other governmental offices. The collection comprises 114 documents, 282 speeches, and 52 parliamentary QnAs.</p>
                 </div>
                 <!-- <div class="authorship">
                     <h4>Authorship</h4>
