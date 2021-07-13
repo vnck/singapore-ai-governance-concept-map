@@ -1,4 +1,10 @@
 $(document).ready(() => {
+    $(() => {
+        $('[data-toggle="popover"]').popover({
+            trigger: 'focus'
+        });
+    });
+    
     $('#titleHeader').on('click', e => {
         e.preventDefault(); 
         $('html, body').animate({

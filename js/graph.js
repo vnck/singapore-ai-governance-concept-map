@@ -24,6 +24,7 @@ let tag_filter = {
     'GOVT': true,
     'POLICY': true,
     'ETHICS': true,
+    'VALUES': true,
     'LOC': true,
     'PERSONS': true,
     'TEMPORAL': true,
@@ -36,8 +37,9 @@ let tag_dict = {
     'GOVT': ['GOVT'],
     'POLICY': ['LAW','POLICY'],
     'ETHICS': ['ETHIC_BENEFICIANCE','ETHIC_FAIRNESS','ETHIC_CONCERNS','ETHIC_SAFETY','ETHIC_SUSTAINABILITY','ETHIC_RESPONSIBILITY','ETHIC_TRUST','ETHIC_PRIVACY','ETHIC_TRANSPARENCY','ETHIC_AUTONOMY'],
+    'VALUES': ['VALUE_FUTURE','VALUE_ENCOMPASSING','VALUE_ACCOMPLISHMENT','VALUE_COOPERATION','VALUE_DIVERSITY','VALUE_AGGRESSIVENESS'],
     'LOC': ['FAC','GPE','LOC'],
-    'PERSONS': ['PEOPLE','PERSON','LANGUAGE'],
+    'PERSONS': ['PEOPLE','PERSON','LANGUAGE','NORP'],
     'TEMPORAL': ['DATE','EVENT','TIME'],
     'OBJECTS': ['PRODUCT','OBJECT','WORK_OF_ART'],
 }
@@ -58,7 +60,7 @@ $(document).ready(() => {
 });
 
 let load_graph = () => {
-    d3.json('data/graph_window2_90p_kcore2_0705.json').then((data) => {
+    d3.json('data/graph_window2_90p_kcore2_0713.json').then((data) => {
         graph_data = data;
         nodes = data.nodes;
         links = data.links;
