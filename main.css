@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+.visualisation-container {
+    position: relative;
+    height: 98%;
+}
+.parent-container {
+    width: 210px;
+    position: absolute;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: .25rem;
+}
+.parent-container > * {
+    font-size: 12px !important;
+    margin: 0;
+    padding: 0;
+}
+.subcontainer {
+    padding-top: .5em;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.form-label {
+    margin-bottom: 4px;
+}
+select {
+    margin: 0;
+    padding: 0;
+    font-size: 12px !important;
+}
+.text-outline {
+    text-shadow:
+        -.5px -.5px 0 #FFF,
+        0   -.5px 0 #FFF,
+        .5px -.5px 0 #FFF,
+        .5px  0   0 #FFF,
+        .5px  .5px 0 #FFF,
+        0    .5px 0 #FFF,
+        -.5px  .5px 0 #FFF,
+        -.5px  0   0 #FFF;
+}
+.accordion-button {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    padding-left: .75rem;
+    font-size: 12px !important;
+}
+.accordion-body {
+    padding: 8px;
+    width: 100%;
+}
+.range-container {
+    display: flex;
+}
+.form-range {
+    position: relative;
+    margin: 0 8px;
+    top: -2.5px;
+}
+.accordion-button {
+    padding: .25rem .5rem;
+    padding-right: .75rem;
+}
+.accordion-button:not(.collapsed) {
+    color: black;
+    background-color: white;
+}
+.parent-header .accordion-button:not(.collapsed), .parent-header .accordion-button:focus {
+    box-shadow: none;
+}
+.accordion-button::after {
+    width: 1rem;
+    height: 1rem;
+    background-size: 1rem;
+}
+.filter-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.form-check-input {
+    align-self: flex-start;
+    margin-right: .4em;
+}
+.popover-trigger {
+    margin-left: auto;
+    margin-right: .4em;
+}
+.popover-body {
+    padding: .5em;
+    font-size: 12px;
+}
+@keyframes float-down {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, 4px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+.float-down {
+    transform: translate(0px, 0px);
+    animation: float-down 3s ease-in-out infinite;
+}
+@keyframes float-up {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -4px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
+.float-up {
+    transform: translate(0px, 0px);
+    animation: float-up 3s ease-in-out infinite;
+}
+.content-container {
+    display: flex;
+    background: white;
+    position: relative;
+}
+.content {
+    width: 54%;
+    padding-top: 2rem;
+    margin-left: 4rem;
+    margin-bottom: 8rem;
+    font-family: "Merriweather", Georgia, serif;
+}
+#backUpContainer {
+    position: fixed;
+    width: max-content;
+    right: 20;
+    bottom: 20;
+    visibility: hidden;
+}
+#introHeader {
+    font-family: var(--bs-font-sans-serif);
+}
+h3 {
+    text-decoration: underline;
+    padding-bottom: 2rem;
+}
+.paragraph {
+    padding-bottom: 1rem;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.footnoteref {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+    font-size: .85rem;
+}
+.footnote {
+    font-size: .85rem;
+}
+.chartContainer {
+    padding: 0 1rem;
+    padding-bottom: 1rem;
+}
+/* mobile styling */
+@media (max-width: 900px) {
+    .content {
+        width: 90%;
+        margin-left: 2rem;
+    }
+}

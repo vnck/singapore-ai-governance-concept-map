@@ -1,0 +1,1252 @@
+[
+    {
+        "Id": "AI",
+        "betweenness_centrality_log": -2.2182563312,
+        "closeness_centrality": 0.627016129
+    },
+    {
+        "Id": "AIDA",
+        "betweenness_centrality_log": -12.8208124608,
+        "closeness_centrality": 0.344789357
+    },
+    {
+        "Id": "AISG",
+        "betweenness_centrality_log": -11.8793124818,
+        "closeness_centrality": 0.4180107527
+    },
+    {
+        "Id": "ASEAN",
+        "betweenness_centrality_log": -6.2249108687,
+        "closeness_centrality": 0.4386459803
+    },
+    {
+        "Id": "Applications",
+        "betweenness_centrality_log": -5.4539134539,
+        "closeness_centrality": 0.5106732348
+    },
+    {
+        "Id": "Asia",
+        "betweenness_centrality_log": -5.7910591877,
+        "closeness_centrality": 0.4417613636
+    },
+    {
+        "Id": "Big Data",
+        "betweenness_centrality_log": -9.2468951318,
+        "closeness_centrality": 0.4468390805
+    },
+    {
+        "Id": "China",
+        "betweenness_centrality_log": -4.1412377534,
+        "closeness_centrality": 0.4442857143
+    },
+    {
+        "Id": "Cloud Technology",
+        "betweenness_centrality_log": -10.352983319,
+        "closeness_centrality": 0.4343575419
+    },
+    {
+        "Id": "EDB",
+        "betweenness_centrality_log": -8.5429486029,
+        "closeness_centrality": 0.4018087855
+    },
+    {
+        "Id": "ESG",
+        "betweenness_centrality_log": -9.3990809778,
+        "closeness_centrality": 0.3792682927
+    },
+    {
+        "Id": "Europe",
+        "betweenness_centrality_log": -8.8860813331,
+        "closeness_centrality": 0.3209494324
+    },
+    {
+        "Id": "FM",
+        "betweenness_centrality_log": -8.6295977134,
+        "closeness_centrality": 0.4081364829
+    },
+    {
+        "Id": "Google",
+        "betweenness_centrality_log": -9.2103462686,
+        "closeness_centrality": 0.4481268012
+    },
+    {
+        "Id": "GovTech",
+        "betweenness_centrality_log": -6.1886505259,
+        "closeness_centrality": 0.4271978022
+    },
+    {
+        "Id": "HDB",
+        "betweenness_centrality_log": -8.9287851356,
+        "closeness_centrality": 0.3830049261
+    },
+    {
+        "Id": "ICM",
+        "betweenness_centrality_log": -9.8762888654,
+        "closeness_centrality": 0.4254445964
+    },
+    {
+        "Id": "ICT",
+        "betweenness_centrality_log": -5.0754936689,
+        "closeness_centrality": 0.5090016367
+    },
+    {
+        "Id": "IMDA",
+        "betweenness_centrality_log": -5.6908048197,
+        "closeness_centrality": 0.4814241486
+    },
+    {
+        "Id": "IPOS",
+        "betweenness_centrality_log": -12.6958883549,
+        "closeness_centrality": 0.3820638821
+    },
+    {
+        "Id": "India",
+        "betweenness_centrality_log": -4.9948791986,
+        "closeness_centrality": 0.4185733513
+    },
+    {
+        "Id": "Indonesia",
+        "betweenness_centrality_log": -10.9655395859,
+        "closeness_centrality": 0.2959086584
+    },
+    {
+        "Id": "Intangible Asset",
+        "betweenness_centrality_log": -10.7366980135,
+        "closeness_centrality": 0.318974359
+    },
+    {
+        "Id": "Intellectual Property",
+        "betweenness_centrality_log": -5.5191253596,
+        "closeness_centrality": 0.4442857143
+    },
+    {
+        "Id": "IoT",
+        "betweenness_centrality_log": -7.9783018449,
+        "closeness_centrality": 0.4507246377
+    },
+    {
+        "Id": "Japan",
+        "betweenness_centrality_log": -10.2635273102,
+        "closeness_centrality": 0.3125628141
+    },
+    {
+        "Id": "MAS",
+        "betweenness_centrality_log": -11.4285149952,
+        "closeness_centrality": 0.4254445964
+    },
+    {
+        "Id": "Malaysia",
+        "betweenness_centrality_log": -6.1634587197,
+        "closeness_centrality": 0.4007731959
+    },
+    {
+        "Id": "Microsoft",
+        "betweenness_centrality_log": -10.7621624413,
+        "closeness_centrality": 0.4168900804
+    },
+    {
+        "Id": "Model AI Governance Framework",
+        "betweenness_centrality_log": -6.8570910109,
+        "closeness_centrality": 0.4614243323
+    },
+    {
+        "Id": "NTU",
+        "betweenness_centrality_log": -7.7294135426,
+        "closeness_centrality": 0.4033722438
+    },
+    {
+        "Id": "NUS",
+        "betweenness_centrality_log": -9.2033731377,
+        "closeness_centrality": 0.3797313797
+    },
+    {
+        "Id": "Robotics",
+        "betweenness_centrality_log": -6.0380472452,
+        "closeness_centrality": 0.4740853659
+    },
+    {
+        "Id": "SAF",
+        "betweenness_centrality_log": -9.8058769823,
+        "closeness_centrality": 0.4546783626
+    },
+    {
+        "Id": "SME",
+        "betweenness_centrality_log": -6.4536908619,
+        "closeness_centrality": 0.4784615385
+    },
+    {
+        "Id": "SNDGO",
+        "betweenness_centrality_log": -12.1695123902,
+        "closeness_centrality": 0.3209494324
+    },
+    {
+        "Id": "SUTD",
+        "betweenness_centrality_log": -8.7162129712,
+        "closeness_centrality": 0.3806609547
+    },
+    {
+        "Id": "Security",
+        "betweenness_centrality_log": -13.5558067513,
+        "closeness_centrality": 0.3650234742
+    },
+    {
+        "Id": "Singapore",
+        "betweenness_centrality_log": -1.8232889325,
+        "closeness_centrality": 0.6645299145
+    },
+    {
+        "Id": "Southeast Asia",
+        "betweenness_centrality_log": -8.7063155398,
+        "closeness_centrality": 0.3498312711
+    },
+    {
+        "Id": "TechSkills Accelerator",
+        "betweenness_centrality_log": -11.2388145713,
+        "closeness_centrality": 0.4108322325
+    },
+    {
+        "Id": "US",
+        "betweenness_centrality_log": -5.3545556563,
+        "closeness_centrality": 0.4254445964
+    },
+    {
+        "Id": "ability",
+        "betweenness_centrality_log": -10.353145707,
+        "closeness_centrality": 0.4621099554
+    },
+    {
+        "Id": "access",
+        "betweenness_centrality_log": -4.9134581777,
+        "closeness_centrality": 0.5140495868
+    },
+    {
+        "Id": "accountability",
+        "betweenness_centrality_log": -7.367447961,
+        "closeness_centrality": 0.4242837653
+    },
+    {
+        "Id": "accountable",
+        "betweenness_centrality_log": -8.5531315735,
+        "closeness_centrality": 0.4130146082
+    },
+    {
+        "Id": "acquire",
+        "betweenness_centrality_log": -8.4086278777,
+        "closeness_centrality": 0.4449213162
+    },
+    {
+        "Id": "adapt",
+        "betweenness_centrality_log": -11.1450680063,
+        "closeness_centrality": 0.4374120956
+    },
+    {
+        "Id": "advanced",
+        "betweenness_centrality_log": -9.2772430242,
+        "closeness_centrality": 0.4580265096
+    },
+    {
+        "Id": "advantage",
+        "betweenness_centrality_log": -10.8874650832,
+        "closeness_centrality": 0.4553440703
+    },
+    {
+        "Id": "agency",
+        "betweenness_centrality_log": -8.526448473,
+        "closeness_centrality": 0.4755351682
+    },
+    {
+        "Id": "algorithm",
+        "betweenness_centrality_log": -9.0134519386,
+        "closeness_centrality": 0.4520348837
+    },
+    {
+        "Id": "alternative",
+        "betweenness_centrality_log": -9.0918816123,
+        "closeness_centrality": 0.3760580411
+    },
+    {
+        "Id": "analytic",
+        "betweenness_centrality_log": -8.5383575789,
+        "closeness_centrality": 0.4507246377
+    },
+    {
+        "Id": "area",
+        "betweenness_centrality_log": -6.0138853128,
+        "closeness_centrality": 0.5183333333
+    },
+    {
+        "Id": "asian",
+        "betweenness_centrality_log": -13.806474976,
+        "closeness_centrality": 0.4474820144
+    },
+    {
+        "Id": "asset",
+        "betweenness_centrality_log": -5.9365035914,
+        "closeness_centrality": 0.4130146082
+    },
+    {
+        "Id": "augment",
+        "betweenness_centrality_log": -10.8739582414,
+        "closeness_centrality": 0.4468390805
+    },
+    {
+        "Id": "basic",
+        "betweenness_centrality_log": -7.2589039821,
+        "closeness_centrality": 0.4468390805
+    },
+    {
+        "Id": "benefit",
+        "betweenness_centrality_log": -5.1691368227,
+        "closeness_centrality": 0.5191986644
+    },
+    {
+        "Id": "bias",
+        "betweenness_centrality_log": -10.2348290825,
+        "closeness_centrality": 0.4219810041
+    },
+    {
+        "Id": "business",
+        "betweenness_centrality_log": -3.3138888862,
+        "closeness_centrality": 0.5879017013
+    },
+    {
+        "Id": "capability",
+        "betweenness_centrality_log": -4.7314584881,
+        "closeness_centrality": 0.5399305556
+    },
+    {
+        "Id": "challenge",
+        "betweenness_centrality_log": -5.9763550225,
+        "closeness_centrality": 0.506514658
+    },
+    {
+        "Id": "citizen",
+        "betweenness_centrality_log": -7.4370606533,
+        "closeness_centrality": 0.4889937107
+    },
+    {
+        "Id": "city",
+        "betweenness_centrality_log": -5.8315885678,
+        "closeness_centrality": 0.4968051118
+    },
+    {
+        "Id": "collaboration",
+        "betweenness_centrality_log": -6.2704296335,
+        "closeness_centrality": 0.4913112164
+    },
+    {
+        "Id": "collaborative",
+        "betweenness_centrality_log": -11.5948517595,
+        "closeness_centrality": 0.3830049261
+    },
+    {
+        "Id": "common",
+        "betweenness_centrality_log": -9.1462659686,
+        "closeness_centrality": 0.4417613636
+    },
+    {
+        "Id": "community",
+        "betweenness_centrality_log": -5.9778841922,
+        "closeness_centrality": 0.5056910569
+    },
+    {
+        "Id": "company",
+        "betweenness_centrality_log": -3.3352085994,
+        "closeness_centrality": 0.5802238806
+    },
+    {
+        "Id": "competency",
+        "betweenness_centrality_log": -10.2112011854,
+        "closeness_centrality": 0.3982074264
+    },
+    {
+        "Id": "competitive",
+        "betweenness_centrality_log": -8.2040863984,
+        "closeness_centrality": 0.468373494
+    },
+    {
+        "Id": "complete",
+        "betweenness_centrality_log": -10.210705234,
+        "closeness_centrality": 0.3263378804
+    },
+    {
+        "Id": "computer",
+        "betweenness_centrality_log": -9.5927426663,
+        "closeness_centrality": 0.4398868458
+    },
+    {
+        "Id": "conducive",
+        "betweenness_centrality_log": -12.2867026225,
+        "closeness_centrality": 0.380195599
+    },
+    {
+        "Id": "connectivity",
+        "betweenness_centrality_log": -8.5193947421,
+        "closeness_centrality": 0.4573529412
+    },
+    {
+        "Id": "consumer",
+        "betweenness_centrality_log": -7.6182357928,
+        "closeness_centrality": 0.4866979656
+    },
+    {
+        "Id": "control",
+        "betweenness_centrality_log": -8.0441047605,
+        "closeness_centrality": 0.4208389716
+    },
+    {
+        "Id": "core",
+        "betweenness_centrality_log": -7.6421518863,
+        "closeness_centrality": 0.4546783626
+    },
+    {
+        "Id": "customer",
+        "betweenness_centrality_log": -5.9764888467,
+        "closeness_centrality": 0.4889937107
+    },
+    {
+        "Id": "cybersecurity",
+        "betweenness_centrality_log": -6.8731715907,
+        "closeness_centrality": 0.4928684628
+    },
+    {
+        "Id": "daily",
+        "betweenness_centrality_log": -13.0072407996,
+        "closeness_centrality": 0.426611797
+    },
+    {
+        "Id": "data",
+        "betweenness_centrality_log": -2.0656787142,
+        "closeness_centrality": 0.6479166667
+    },
+    {
+        "Id": "data analytics",
+        "betweenness_centrality_log": -7.4843626054,
+        "closeness_centrality": 0.4829192547
+    },
+    {
+        "Id": "dataset",
+        "betweenness_centrality_log": -5.6859825037,
+        "closeness_centrality": 0.4374120956
+    },
+    {
+        "Id": "decide",
+        "betweenness_centrality_log": -12.4718470045,
+        "closeness_centrality": 0.3976982097
+    },
+    {
+        "Id": "device",
+        "betweenness_centrality_log": -9.019436106,
+        "closeness_centrality": 0.4070680628
+    },
+    {
+        "Id": "diagnostic",
+        "betweenness_centrality_log": -12.3926559415,
+        "closeness_centrality": 0.3304994687
+    },
+    {
+        "Id": "diverse",
+        "betweenness_centrality_log": -10.8386476174,
+        "closeness_centrality": 0.376969697
+    },
+    {
+        "Id": "domain",
+        "betweenness_centrality_log": -9.8954161865,
+        "closeness_centrality": 0.443019943
+    },
+    {
+        "Id": "economy",
+        "betweenness_centrality_log": -5.0962431611,
+        "closeness_centrality": 0.5200668896
+    },
+    {
+        "Id": "efficiency",
+        "betweenness_centrality_log": -8.3816540718,
+        "closeness_centrality": 0.4277854195
+    },
+    {
+        "Id": "efficient",
+        "betweenness_centrality_log": -10.1356244991,
+        "closeness_centrality": 0.3624708625
+    },
+    {
+        "Id": "embrace",
+        "betweenness_centrality_log": -12.6018505166,
+        "closeness_centrality": 0.456681351
+    },
+    {
+        "Id": "emerge",
+        "betweenness_centrality_log": -6.9108190346,
+        "closeness_centrality": 0.500805153
+    },
+    {
+        "Id": "employer",
+        "betweenness_centrality_log": -11.4602296765,
+        "closeness_centrality": 0.4102902375
+    },
+    {
+        "Id": "enabler",
+        "betweenness_centrality_log": -13.6164313732,
+        "closeness_centrality": 0.434965035
+    },
+    {
+        "Id": "enterprise",
+        "betweenness_centrality_log": -5.2500620614,
+        "closeness_centrality": 0.5024232633
+    },
+    {
+        "Id": "environment",
+        "betweenness_centrality_log": -5.3681090689,
+        "closeness_centrality": 0.5
+    },
+    {
+        "Id": "establish",
+        "betweenness_centrality_log": -6.4540364491,
+        "closeness_centrality": 0.4829192547
+    },
+    {
+        "Id": "ethic",
+        "betweenness_centrality_log": -11.6925883181,
+        "closeness_centrality": 0.4168900804
+    },
+    {
+        "Id": "ethical",
+        "betweenness_centrality_log": -12.136115745,
+        "closeness_centrality": 0.4202702703
+    },
+    {
+        "Id": "exchange",
+        "betweenness_centrality_log": -8.7684703707,
+        "closeness_centrality": 0.4494219653
+    },
+    {
+        "Id": "exciting",
+        "betweenness_centrality_log": -9.8993368904,
+        "closeness_centrality": 0.4386459803
+    },
+    {
+        "Id": "explainability",
+        "betweenness_centrality_log": -8.6770647148,
+        "closeness_centrality": 0.3911949686
+    },
+    {
+        "Id": "explore",
+        "betweenness_centrality_log": -8.759779743,
+        "closeness_centrality": 0.4836702955
+    },
+    {
+        "Id": "external",
+        "betweenness_centrality_log": -9.2022873692,
+        "closeness_centrality": 0.4423897582
+    },
+    {
+        "Id": "fair",
+        "betweenness_centrality_log": -9.7374043727,
+        "closeness_centrality": 0.344789357
+    },
+    {
+        "Id": "field",
+        "betweenness_centrality_log": -7.5064013385,
+        "closeness_centrality": 0.4442857143
+    },
+    {
+        "Id": "finance",
+        "betweenness_centrality_log": -9.1542008732,
+        "closeness_centrality": 0.429558011
+    },
+    {
+        "Id": "firm",
+        "betweenness_centrality_log": -5.8040983887,
+        "closeness_centrality": 0.487460815
+    },
+    {
+        "Id": "foreign",
+        "betweenness_centrality_log": -9.9138334882,
+        "closeness_centrality": 0.4225543478
+    },
+    {
+        "Id": "framework",
+        "betweenness_centrality_log": -6.0506252717,
+        "closeness_centrality": 0.4829192547
+    },
+    {
+        "Id": "future",
+        "betweenness_centrality_log": -5.2682534528,
+        "closeness_centrality": 0.4991974318
+    },
+    {
+        "Id": "global",
+        "betweenness_centrality_log": -5.4726937298,
+        "closeness_centrality": 0.5174708819
+    },
+    {
+        "Id": "great",
+        "betweenness_centrality_log": -6.8471834895,
+        "closeness_centrality": 0.4991974318
+    },
+    {
+        "Id": "green",
+        "betweenness_centrality_log": -9.7650959836,
+        "closeness_centrality": 0.4374120956
+    },
+    {
+        "Id": "growth",
+        "betweenness_centrality_log": -4.3327414909,
+        "closeness_centrality": 0.5140495868
+    },
+    {
+        "Id": "guide",
+        "betweenness_centrality_log": -7.7377445681,
+        "closeness_centrality": 0.4748091603
+    },
+    {
+        "Id": "hard",
+        "betweenness_centrality_log": -13.0622726247,
+        "closeness_centrality": 0.38875
+    },
+    {
+        "Id": "harm",
+        "betweenness_centrality_log": -12.1013041402,
+        "closeness_centrality": 0.3658823529
+    },
+    {
+        "Id": "healthcare",
+        "betweenness_centrality_log": -6.8563772855,
+        "closeness_centrality": 0.4952229299
+    },
+    {
+        "Id": "hope",
+        "betweenness_centrality_log": -12.7642798863,
+        "closeness_centrality": 0.4560117302
+    },
+    {
+        "Id": "human",
+        "betweenness_centrality_log": -5.864321639,
+        "closeness_centrality": 0.4889937107
+    },
+    {
+        "Id": "imagine",
+        "betweenness_centrality_log": -11.477473243,
+        "closeness_centrality": 0.3398907104
+    },
+    {
+        "Id": "improve",
+        "betweenness_centrality_log": -4.4594142066,
+        "closeness_centrality": 0.5408695652
+    },
+    {
+        "Id": "inclusive",
+        "betweenness_centrality_log": -11.643195651,
+        "closeness_centrality": 0.4060052219
+    },
+    {
+        "Id": "individual",
+        "betweenness_centrality_log": -5.5936256215,
+        "closeness_centrality": 0.5016129032
+    },
+    {
+        "Id": "industry",
+        "betweenness_centrality_log": -3.8572575501,
+        "closeness_centrality": 0.5695970696
+    },
+    {
+        "Id": "information",
+        "betweenness_centrality_log": -5.5603443507,
+        "closeness_centrality": 0.4976
+    },
+    {
+        "Id": "infrastructure",
+        "betweenness_centrality_log": -4.7192544605,
+        "closeness_centrality": 0.5115131579
+    },
+    {
+        "Id": "initiative",
+        "betweenness_centrality_log": -4.1110432431,
+        "closeness_centrality": 0.5
+    },
+    {
+        "Id": "innovative",
+        "betweenness_centrality_log": -6.8212514144,
+        "closeness_centrality": 0.4936507937
+    },
+    {
+        "Id": "innovator",
+        "betweenness_centrality_log": -12.1408205719,
+        "closeness_centrality": 0.3931731985
+    },
+    {
+        "Id": "institution",
+        "betweenness_centrality_log": -10.2172098588,
+        "closeness_centrality": 0.4829192547
+    },
+    {
+        "Id": "integrate",
+        "betweenness_centrality_log": -7.5864562723,
+        "closeness_centrality": 0.4968051118
+    },
+    {
+        "Id": "integration",
+        "betweenness_centrality_log": -9.2565319725,
+        "closeness_centrality": 0.4343575419
+    },
+    {
+        "Id": "international",
+        "betweenness_centrality_log": -7.3384508567,
+        "closeness_centrality": 0.4913112164
+    },
+    {
+        "Id": "internet",
+        "betweenness_centrality_log": -8.3175617415,
+        "closeness_centrality": 0.4289655172
+    },
+    {
+        "Id": "issue",
+        "betweenness_centrality_log": -6.4277287217,
+        "closeness_centrality": 0.4791987673
+    },
+    {
+        "Id": "job",
+        "betweenness_centrality_log": -5.1053998642,
+        "closeness_centrality": 0.5140495868
+    },
+    {
+        "Id": "just",
+        "betweenness_centrality_log": -4.7371339016,
+        "closeness_centrality": 0.4944356121
+    },
+    {
+        "Id": "key",
+        "betweenness_centrality_log": -5.1704424713,
+        "closeness_centrality": 0.5298126065
+    },
+    {
+        "Id": "lawyer",
+        "betweenness_centrality_log": -11.8165933597,
+        "closeness_centrality": 0.434965035
+    },
+    {
+        "Id": "lead",
+        "betweenness_centrality_log": -6.423486276,
+        "closeness_centrality": 0.5090016367
+    },
+    {
+        "Id": "life",
+        "betweenness_centrality_log": -5.2864329712,
+        "closeness_centrality": 0.4889937107
+    },
+    {
+        "Id": "literacy",
+        "betweenness_centrality_log": -10.7405515828,
+        "closeness_centrality": 0.3550228311
+    },
+    {
+        "Id": "local",
+        "betweenness_centrality_log": -5.5082818287,
+        "closeness_centrality": 0.5140495868
+    },
+    {
+        "Id": "long",
+        "betweenness_centrality_log": -9.0489693025,
+        "closeness_centrality": 0.4355742297
+    },
+    {
+        "Id": "long-term",
+        "betweenness_centrality_log": -12.4927203032,
+        "closeness_centrality": 0.3562428408
+    },
+    {
+        "Id": "machine",
+        "betweenness_centrality_log": -9.3149836209,
+        "closeness_centrality": 0.4573529412
+    },
+    {
+        "Id": "manage",
+        "betweenness_centrality_log": -7.0758367639,
+        "closeness_centrality": 0.4690799397
+    },
+    {
+        "Id": "maritime",
+        "betweenness_centrality_log": -7.8505766462,
+        "closeness_centrality": 0.462797619
+    },
+    {
+        "Id": "market",
+        "betweenness_centrality_log": -4.410592809,
+        "closeness_centrality": 0.5325342466
+    },
+    {
+        "Id": "medium",
+        "betweenness_centrality_log": -6.1982637919,
+        "closeness_centrality": 0.4821705426
+    },
+    {
+        "Id": "mobile",
+        "betweenness_centrality_log": -7.5305853189,
+        "closeness_centrality": 0.4614243323
+    },
+    {
+        "Id": "model",
+        "betweenness_centrality_log": -4.5469488704,
+        "closeness_centrality": 0.5132013201
+    },
+    {
+        "Id": "monitor",
+        "betweenness_centrality_log": -10.1505398731,
+        "closeness_centrality": 0.4191374663
+    },
+    {
+        "Id": "must",
+        "betweenness_centrality_log": -6.1656172096,
+        "closeness_centrality": 0.5132013201
+    },
+    {
+        "Id": "nation",
+        "betweenness_centrality_log": -9.7418608638,
+        "closeness_centrality": 0.429558011
+    },
+    {
+        "Id": "national",
+        "betweenness_centrality_log": -5.5151756958,
+        "closeness_centrality": 0.4836702955
+    },
+    {
+        "Id": "nationwide",
+        "betweenness_centrality_log": -11.5703941593,
+        "closeness_centrality": 0.3550228311
+    },
+    {
+        "Id": "need",
+        "betweenness_centrality_log": -3.2061078843,
+        "closeness_centrality": 0.5912547529
+    },
+    {
+        "Id": "new",
+        "betweenness_centrality_log": -2.8556630947,
+        "closeness_centrality": 0.6062378168
+    },
+    {
+        "Id": "objective",
+        "betweenness_centrality_log": -9.2861390011,
+        "closeness_centrality": 0.4076015727
+    },
+    {
+        "Id": "officer",
+        "betweenness_centrality_log": -7.9495706589,
+        "closeness_centrality": 0.4580265096
+    },
+    {
+        "Id": "organisation",
+        "betweenness_centrality_log": -4.5695602124,
+        "closeness_centrality": 0.5253378378
+    },
+    {
+        "Id": "partner",
+        "betweenness_centrality_log": -6.0449281228,
+        "closeness_centrality": 0.4991974318
+    },
+    {
+        "Id": "partnership",
+        "betweenness_centrality_log": -7.4821648337,
+        "closeness_centrality": 0.4851794072
+    },
+    {
+        "Id": "peace",
+        "betweenness_centrality_log": -9.3408382955,
+        "closeness_centrality": 0.3280590717
+    },
+    {
+        "Id": "people",
+        "betweenness_centrality_log": -5.6388880663,
+        "closeness_centrality": 0.5244519393
+    },
+    {
+        "Id": "personal",
+        "betweenness_centrality_log": -7.1147821199,
+        "closeness_centrality": 0.4180107527
+    },
+    {
+        "Id": "pilot",
+        "betweenness_centrality_log": -9.3423573771,
+        "closeness_centrality": 0.4481268012
+    },
+    {
+        "Id": "platform",
+        "betweenness_centrality_log": -4.0838464284,
+        "closeness_centrality": 0.5334476844
+    },
+    {
+        "Id": "player",
+        "betweenness_centrality_log": -9.8990473736,
+        "closeness_centrality": 0.4343575419
+    },
+    {
+        "Id": "policy",
+        "betweenness_centrality_log": -6.3882455675,
+        "closeness_centrality": 0.4944356121
+    },
+    {
+        "Id": "possibility",
+        "betweenness_centrality_log": -6.1559471115,
+        "closeness_centrality": 0.4533527697
+    },
+    {
+        "Id": "potential",
+        "betweenness_centrality_log": -5.8468764853,
+        "closeness_centrality": 0.5016129032
+    },
+    {
+        "Id": "practice",
+        "betweenness_centrality_log": -5.5110132508,
+        "closeness_centrality": 0.4897637795
+    },
+    {
+        "Id": "predict",
+        "betweenness_centrality_log": -13.1407767481,
+        "closeness_centrality": 0.3961783439
+    },
+    {
+        "Id": "privacy",
+        "betweenness_centrality_log": -9.2363762588,
+        "closeness_centrality": 0.4325452017
+    },
+    {
+        "Id": "private sector",
+        "betweenness_centrality_log": -10.7313491296,
+        "closeness_centrality": 0.4526928675
+    },
+    {
+        "Id": "process",
+        "betweenness_centrality_log": -4.6494737592,
+        "closeness_centrality": 0.5106732348
+    },
+    {
+        "Id": "product",
+        "betweenness_centrality_log": -6.7455513168,
+        "closeness_centrality": 0.4851794072
+    },
+    {
+        "Id": "prosperity",
+        "betweenness_centrality_log": -8.5925738987,
+        "closeness_centrality": 0.3410087719
+    },
+    {
+        "Id": "provider",
+        "betweenness_centrality_log": -6.278197682,
+        "closeness_centrality": 0.4960127592
+    },
+    {
+        "Id": "public",
+        "betweenness_centrality_log": -4.7790775461,
+        "closeness_centrality": 0.5280135823
+    },
+    {
+        "Id": "public sector",
+        "betweenness_centrality_log": -9.9704841799,
+        "closeness_centrality": 0.4712121212
+    },
+    {
+        "Id": "quality",
+        "betweenness_centrality_log": -7.0157137559,
+        "closeness_centrality": 0.4301521438
+    },
+    {
+        "Id": "r&d",
+        "betweenness_centrality_log": -9.8506593861,
+        "closeness_centrality": 0.462797619
+    },
+    {
+        "Id": "ready",
+        "betweenness_centrality_log": -12.2748729059,
+        "closeness_centrality": 0.4436519258
+    },
+    {
+        "Id": "recommendation",
+        "betweenness_centrality_log": -11.1396645884,
+        "closeness_centrality": 0.4526928675
+    },
+    {
+        "Id": "regulation",
+        "betweenness_centrality_log": -8.9957850262,
+        "closeness_centrality": 0.4474820144
+    },
+    {
+        "Id": "relate",
+        "betweenness_centrality_log": -11.5452888601,
+        "closeness_centrality": 0.443019943
+    },
+    {
+        "Id": "resident",
+        "betweenness_centrality_log": -5.3235666515,
+        "closeness_centrality": 0.424863388
+    },
+    {
+        "Id": "resource",
+        "betweenness_centrality_log": -7.9893762299,
+        "closeness_centrality": 0.4762633997
+    },
+    {
+        "Id": "responsibility",
+        "betweenness_centrality_log": -9.9328364,
+        "closeness_centrality": 0.4023285899
+    },
+    {
+        "Id": "responsible",
+        "betweenness_centrality_log": -9.0766884174,
+        "closeness_centrality": 0.4331476323
+    },
+    {
+        "Id": "right",
+        "betweenness_centrality_log": -6.9288636202,
+        "closeness_centrality": 0.4704992436
+    },
+    {
+        "Id": "risk",
+        "betweenness_centrality_log": -5.053036494,
+        "closeness_centrality": 0.506514658
+    },
+    {
+        "Id": "safe",
+        "betweenness_centrality_log": -7.709726684,
+        "closeness_centrality": 0.4374120956
+    },
+    {
+        "Id": "safety",
+        "betweenness_centrality_log": -9.2943169344,
+        "closeness_centrality": 0.3765133172
+    },
+    {
+        "Id": "secondary",
+        "betweenness_centrality_log": -6.4510656808,
+        "closeness_centrality": 0.4002574003
+    },
+    {
+        "Id": "security",
+        "betweenness_centrality_log": -4.710812531,
+        "closeness_centrality": 0.484423676
+    },
+    {
+        "Id": "sensor",
+        "betweenness_centrality_log": -6.7842908661,
+        "closeness_centrality": 0.4355742297
+    },
+    {
+        "Id": "short",
+        "betweenness_centrality_log": -12.8626595708,
+        "closeness_centrality": 0.3413830955
+    },
+    {
+        "Id": "singaporean",
+        "betweenness_centrality_log": -9.2825997159,
+        "closeness_centrality": 0.4157754011
+    },
+    {
+        "Id": "skill",
+        "betweenness_centrality_log": -5.5722060836,
+        "closeness_centrality": 0.4928684628
+    },
+    {
+        "Id": "social",
+        "betweenness_centrality_log": -6.2676764596,
+        "closeness_centrality": 0.4920886076
+    },
+    {
+        "Id": "society",
+        "betweenness_centrality_log": -7.5249247504,
+        "closeness_centrality": 0.4755351682
+    },
+    {
+        "Id": "solution",
+        "betweenness_centrality_log": -4.4186730891,
+        "closeness_centrality": 0.546572935
+    },
+    {
+        "Id": "staff",
+        "betweenness_centrality_log": -10.0375361791,
+        "closeness_centrality": 0.4331476323
+    },
+    {
+        "Id": "stakeholder",
+        "betweenness_centrality_log": -7.3381991683,
+        "closeness_centrality": 0.4799382716
+    },
+    {
+        "Id": "standard",
+        "betweenness_centrality_log": -7.1052434144,
+        "closeness_centrality": 0.4587020649
+    },
+    {
+        "Id": "strategy",
+        "betweenness_centrality_log": -6.7920517037,
+        "closeness_centrality": 0.4836702955
+    },
+    {
+        "Id": "student",
+        "betweenness_centrality_log": -4.645077044,
+        "closeness_centrality": 0.4337517434
+    },
+    {
+        "Id": "support",
+        "betweenness_centrality_log": -3.6866671468,
+        "closeness_centrality": 0.5706422018
+    },
+    {
+        "Id": "sustainable",
+        "betweenness_centrality_log": -6.8037790459,
+        "closeness_centrality": 0.4540145985
+    },
+    {
+        "Id": "talent",
+        "betweenness_centrality_log": -6.8751219455,
+        "closeness_centrality": 0.4983974359
+    },
+    {
+        "Id": "team",
+        "betweenness_centrality_log": -5.872017483,
+        "closeness_centrality": 0.4913112164
+    },
+    {
+        "Id": "technology",
+        "betweenness_centrality_log": -2.0468312373,
+        "closeness_centrality": 0.6492693111
+    },
+    {
+        "Id": "term",
+        "betweenness_centrality_log": -6.2074395348,
+        "closeness_centrality": 0.4546783626
+    },
+    {
+        "Id": "test",
+        "betweenness_centrality_log": -6.4345162758,
+        "closeness_centrality": 0.429558011
+    },
+    {
+        "Id": "threat",
+        "betweenness_centrality_log": -8.8910435269,
+        "closeness_centrality": 0.4331476323
+    },
+    {
+        "Id": "thrive",
+        "betweenness_centrality_log": -13.806474976,
+        "closeness_centrality": 0.4507246377
+    },
+    {
+        "Id": "time",
+        "betweenness_centrality_log": -4.8858463695,
+        "closeness_centrality": 0.5073409462
+    },
+    {
+        "Id": "today",
+        "betweenness_centrality_log": -6.4714312521,
+        "closeness_centrality": 0.4991974318
+    },
+    {
+        "Id": "tool",
+        "betweenness_centrality_log": -5.2668604607,
+        "closeness_centrality": 0.487460815
+    },
+    {
+        "Id": "town",
+        "betweenness_centrality_log": -6.4443583598,
+        "closeness_centrality": 0.3834771887
+    },
+    {
+        "Id": "transform",
+        "betweenness_centrality_log": -6.32526888,
+        "closeness_centrality": 0.5090016367
+    },
+    {
+        "Id": "transparency",
+        "betweenness_centrality_log": -9.2914604319,
+        "closeness_centrality": 0.3671782763
+    },
+    {
+        "Id": "transparent",
+        "betweenness_centrality_log": -8.0022413822,
+        "closeness_centrality": 0.3882646692
+    },
+    {
+        "Id": "trust",
+        "betweenness_centrality_log": -5.8118046863,
+        "closeness_centrality": 0.5056910569
+    },
+    {
+        "Id": "understand",
+        "betweenness_centrality_log": -6.4073474268,
+        "closeness_centrality": 0.5016129032
+    },
+    {
+        "Id": "vibrant",
+        "betweenness_centrality_log": -9.8141766127,
+        "closeness_centrality": 0.4540145985
+    },
+    {
+        "Id": "vision",
+        "betweenness_centrality_log": -12.1790818412,
+        "closeness_centrality": 0.4146666667
+    },
+    {
+        "Id": "work",
+        "betweenness_centrality_log": -2.5354847365,
+        "closeness_centrality": 0.6038834951
+    },
+    {
+        "Id": "worker",
+        "betweenness_centrality_log": -6.0870139294,
+        "closeness_centrality": 0.4960127592
+    },
+    {
+        "Id": "workforce",
+        "betweenness_centrality_log": -7.7504240187,
+        "closeness_centrality": 0.468373494
+    },
+    {
+        "Id": "Fintech",
+        "betweenness_centrality_log": -10.7686338857,
+        "closeness_centrality": 0.4546783626
+    },
+    {
+        "Id": "Infocomm Media",
+        "betweenness_centrality_log": -9.7744491328,
+        "closeness_centrality": 0.4461979914
+    },
+    {
+        "Id": "Punggol",
+        "betweenness_centrality_log": -10.6746160195,
+        "closeness_centrality": 0.3049019608
+    },
+    {
+        "Id": "Singaporeans",
+        "betweenness_centrality_log": -7.7279363366,
+        "closeness_centrality": 0.4755351682
+    },
+    {
+        "Id": "Smart Nation",
+        "betweenness_centrality_log": -5.2751599486,
+        "closeness_centrality": 0.468373494
+    },
+    {
+        "Id": "ecosystem",
+        "betweenness_centrality_log": -5.367231461,
+        "closeness_centrality": 0.5
+    },
+    {
+        "Id": "empower",
+        "betweenness_centrality_log": -10.5557414548,
+        "closeness_centrality": 0.4231292517
+    },
+    {
+        "Id": "good",
+        "betweenness_centrality_log": -5.4915560171,
+        "closeness_centrality": 0.5235690236
+    },
+    {
+        "Id": "government",
+        "betweenness_centrality_log": -3.9949393514,
+        "closeness_centrality": 0.559352518
+    },
+    {
+        "Id": "opportunity",
+        "betweenness_centrality_log": -4.403797241,
+        "closeness_centrality": 0.5307167235
+    }
+]

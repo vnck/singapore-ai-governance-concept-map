@@ -47,7 +47,6 @@ let tag_list = [];
 Object.keys(tag_filter).map(key => tag_filter[key] ? tag_list = tag_list.concat(tag_dict[key]): null);
 
 let edgeWeightColor = (d) => {
-    console.log(edgeWeightColorSelection);
     if (edgeWeightColorSelection === 'tag') {
         return d3.interpolateRgb(d.source.color, d.target.color)(0.5);
     } else {

@@ -18,169 +18,16 @@
         <!-- jquery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+        <!-- chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+        <script src="js/chartjs-plugin-datalabels.min.js"></script>
+
         <!-- my scripts -->
+        <link href="main.css" rel="stylesheet">
         <script src="js/main.js"></script>
         <script src="js/graph.js"></script>
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-            .visualisation-container {
-                position: relative;
-                height: 98%;
-            }
-            .parent-container {
-                width: 210px;
-                position: absolute;
-                padding: 8px;
-                background-color: white;
-                border: 1px solid black;
-                border-radius: .25rem;
-            }
-            .parent-container > * {
-                font-size: 12px !important;
-                margin: 0;
-                padding: 0;
-            }
-            .subcontainer {
-                padding-top: .5em;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-            }
-            .form-label {
-                margin-bottom: 4px;
-            }
-            select {
-                margin: 0;
-                padding: 0;
-                font-size: 12px !important;
-            }
-            .text-outline {
-                text-shadow:
-                    -.5px -.5px 0 #FFF,
-                    0   -.5px 0 #FFF,
-                    .5px -.5px 0 #FFF,
-                    .5px  0   0 #FFF,
-                    .5px  .5px 0 #FFF,
-                    0    .5px 0 #FFF,
-                    -.5px  .5px 0 #FFF,
-                    -.5px  0   0 #FFF;
-            }
-            .accordion-button {
-                padding-top: .25rem;
-                padding-bottom: .25rem;
-                padding-left: .75rem;
-                font-size: 12px !important;
-            }
-            .accordion-body {
-                padding: 8px;
-                width: 100%;
-            }
-            .range-container {
-                display: flex;
-            }
-            .form-range {
-                position: relative;
-                margin: 0 8px;
-                top: -2.5px;
-            }
-            .accordion-button {
-                padding: .25rem .5rem;
-                padding-right: .75rem;
-            }
-            .accordion-button:not(.collapsed) {
-                color: black;
-                background-color: white;
-            }
-            .parent-header .accordion-button:not(.collapsed), .parent-header .accordion-button:focus {
-                box-shadow: none;
-            }
-            .accordion-button::after {
-                width: 1rem;
-                height: 1rem;
-                background-size: 1rem;
-            }
-            .filter-item {
-                width: 100%;
-                display: flex;
-                align-items: center;
-            }
-            .form-check-input {
-                align-self: flex-start;
-                margin-right: .4em;
-            }
-            .popover-trigger {
-                margin-left: auto;
-                margin-right: .4em;
-            }
-            .popover-body {
-                padding: .5em;
-                font-size: 12px;
-            }
-            @keyframes float-down {
-                0% {
-                    transform: translate(0px, 0px);
-                }
-                50% {
-                    transform: translate(0px, 4px);
-                }
-                100% {
-                    transform: translate(0px, 0px);
-                }
-            }
-            .float-down {
-                transform: translate(0px, 0px);
-	            animation: float-down 3s ease-in-out infinite;
-            }
-            @keyframes float-up {
-                0% {
-                    transform: translate(0px, 0px);
-                }
-                50% {
-                    transform: translate(0px, -4px);
-                }
-                100% {
-                    transform: translate(0px, 0px);
-                }
-            }
-            .float-up {
-                transform: translate(0px, 0px);
-	            animation: float-up 3s ease-in-out infinite;
-            }
-            .content-container {
-                display: flex;
-                background: white;
-                position: relative;
-            }
-            .content {
-                width: 54%;
-                padding-top: 2rem;
-                margin-left: 4rem;
-                margin-bottom: 8rem;
-            }
-            #backUpContainer {
-                position: fixed;
-                width: max-content;
-                right: 20;
-                bottom: 20;
-                visibility: hidden;
-            }
-            h3 {
-                text-decoration: underline;
-                padding-bottom: 2rem;
-            }
-            .paragraph {
-                padding-bottom: 1rem;
-            }
-            /* mobile styling */
-            @media (max-width: 900px) {
-                .content {
-                    width: 90%;
-                    margin-left: 2rem;
-                }
-            }
-        </style>
+        <script src="js/charts.js"></script>
     </head>
     <body>
         <div class="visualisation-container">
@@ -413,8 +260,52 @@
                     <p>Hence, this project seeks to map out the concepts of AI evoked by the Singapore government, charting connections between disparate bodies of knowledge distributed across the governmental body's many arms.</p>
                 </div>
                 <div class="paragraph">
+                    <h4>A definition of AI</h4>
+                    <p>The Singapore government defines artificial intelligence (AI) as "a set of technologies that seek to simulate human traits such as knowledge, reasoning, problem solving, perception, learning and planning, [to] produce an output or decision."<span class="footnoteref">1</span> This set of technologies includes computer vision, machine learning, natural language processing, deep learning and robotics.</p>
+                    <p class="footnote"><span>[1]</span> Personal Data Protection Commission Singapore. (2020). <a href="https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/resource-for-organisation/ai/sgmodelaigovframework2.pdf">Model Artificial Intelligence Governance Framework Second Edition</a>.</p>
+                </div>
+                <div class="paragraph">
+                    <h4>AI Governance</h4>
+                    <p>As the capabilities of AI technologies are further acknowledged, more governments are engaging in AI governance discourse. AI governance discourse seeks to reach consensus on the norms, policies and institutions that manage AI's development, regulation and application. The wide range of actors, priorities, and sentiments that make up the discourse increases the complexity and challenge of reaching this goal.</p>
+                </div>
+                <div class="paragraph">
                     <h4>The data</h4>
-                    <p>The semantic network was constructed from a content analysis of 448 publications drawn from 79 different arms of the Singapore government—16 ministries, 58 statutory boards, and 5 other governmental offices. The collection comprises 114 documents, 282 speeches, and 52 parliamentary QnAs.</p>
+                    <p>The data consists of 432 textual sources—comprising 106 documents, 271 speeches and 55 parliamentary Q&As—published by the Singapore government between 2014 to 2021, across 34 different government arms.</p>
+                    <p>Over the years, the increasing publication reflects the growing salience of AI governance discourse.</p>
+                </div>
+                <div class='chartContainer'>
+                    <canvas id='BarPublicationCount'></canvas>
+                </div>
+                <div class="paragraph">
+                    <p>The diversity of government organisations has also been increasing.</p>
+                </div>
+                <div class='chartContainer'>
+                    <canvas id='BarOrgCount'></canvas>
+                </div>
+                <div class="paragraph">
+                    <p>The leading organisation in publications of documents (e.g. white papers, masterplans, and fact sheets) is the Infocomm and Media Development Authority (IMDA) (n = 25), while the the Ministry of Communications and Information (MCI) published the most speeches (n=32) and parliamentary Q&As (n = 10).</p>
+                </div>
+                <div class='chartContainer'>
+                    <canvas id='BarOrgType'></canvas>
+                </div>
+                <div class="paragraph">
+                    <h4>Central Words</h4>
+                    <p>Centrality measures were calculated for each word in the semantic network. The most central words were Singapore, work, technology, data and AI.</p>
+                </div>
+                <div class='chartContainer'>
+                    <canvas id='ScatterWordCentrality'></canvas>
+                </div>
+                <div class="paragraph">
+                    <h4>Descriptors of AI</h4>
+                    <p>The ego-centred network constructed around the word AI reveals the embedded nature of AI technologies situated in their sociotechnical environment. From the network, we can see that AI is associated with other technologies such as blockchain, cloud technologies, cybersecurity, sensors, and Internet-of-Things (IoT). Beyond technologies, associations to various domains of urban life also emerge, such as the economy, work, and community.</p>
+                </div>
+                <div class="paragraph">
+                    <h4>Ethical Principles around AI Governance</h4>
+                    <p>Ethical principles that characterise the global landscape of AI governance discourse also appear in Singapore’s AI governance discourse significantly (e.g. responsible, ethical, human, accountable, transparent). Ethical concerns were also present through terms (e.g. challenges, issues, risks) and their associated links (e.g. security, trust). A pro-AI vision of future Singapore is supported by the observation that references to beneficial terms (e.g. good, efficient, safe) outweigh references to maleficence (e.g. bias, harm).</p>
+                </div>
+                <div class="paragraph">
+                    <h4>Stakeholders of AI Governance</h4>
+                    <p>Businesses, industries and companies surfaced as the main stakeholders in the private sector, from the domains of finance and healthcare. In the private sector, central government bodies include IMDA, GovTech, AISG, and MAS. Persons identified in the semantic network include customers, consumers, citizens, workers, employers, re- searchers, and students. The domain of business and work was observed to weigh heavily on Singapore’s AI governance discourse.</p>
                 </div>
                 <!-- <div class="authorship">
                     <h4>Authorship</h4>
