@@ -30,7 +30,7 @@ $(document).ready(async () => {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'No. of publications by type'
+                        text: 'Count of publications by type'
                     },
                     legend: {
                         labels: {
@@ -62,7 +62,7 @@ $(document).ready(async () => {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'No. of organisations by year'
+                        text: 'Count of participating offices by year'
                     },
                     legend: {
                         display: false
@@ -143,7 +143,7 @@ $(document).ready(async () => {
                 plugins: {
                     title: {
                         display: true,
-                        text: 'No. of organisations by year'
+                        text: 'Count of publications by each office'
                     },
                     legend: {
                         labels: {

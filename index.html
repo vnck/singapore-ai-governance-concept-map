@@ -1,29 +1,29 @@
 <html>
     <head>
-        <title>IRP Thesis - AI Governance Map</title>
-        <!-- favicon -->
+        <title>IRP Thesis AI Governance Map</title>
+        <!-favicon -->
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
         
-        <!-- bootstrap -->
+        <!-bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <!-- JavaScript Bundle with Popper -->
+        <!-JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <!-- popper.js -->
+        <!-popper.js -->
         <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
 
-        <!-- d3.js -->
+        <!-d3.js -->
         <script src="https://d3js.org/d3.v6.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js"></script>
 
-        <!-- jquery -->
+        <!-jquery -->
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-        <!-- chart.js -->
+        <!-chart.js -->
         <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0/dist/chart.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@next/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
         <script src="js/chartjs-plugin-datalabels.min.js"></script>
 
-        <!-- my scripts -->
+        <!-my scripts -->
         <link href="main.css" rel="stylesheet">
         <script src="js/main.js"></script>
         <script src="js/graph.js"></script>
@@ -256,62 +256,364 @@
             <div class="content">
                 <div class="paragraph">
                     <h3 id="introHeader">A Singapore AI Governance Concept Map</h3>
-                    <p>The Singapore government endeavours to make Artificial Intelligence (AI) a core national technology. Singaporeans will find AI increasingly interlacing in their everyday life. Yet, AI evoked is more than just a neutral technology, instead serving too as a socio-technical imaginary, a method to construct and promote certain possible urban futures.</p>
-                    <p>Hence, this project seeks to map out the concepts of AI evoked by the Singapore government, charting connections between disparate bodies of knowledge distributed across the governmental body's many arms.</p>
+                    <p>The Singapore government endeavours to make Artificial Intelligence (AI) a core national technology. Singaporeans will find AI increasingly interlacing in their everyday life. Yet, AI evoked is more than just a neutral technology, serving too as a sociotechnical imaginary, a method to construct and promote certain possible urban futures.</p>
+                    <p>The conceptual map above charts connections between disparate bodies of knowledge on AI governance across the Singapore government's many arms, making explicit the imaginary of the Singapore government. The map was constructed by extracting the co-occurrence of words from a corpus of text—white papers, fact sheets, speech transcripts, answers to parliamentary questions—published by the Singapore government around the topic of AI.</p>
+                    <p>The multitude of systems—technological, material, and political—that make up AI in practice renders attempts of understanding the whole system a herculean task. Hence, instead of attempting to interpret the whole map, a partial account is offered by highlighting and interpreting significant concepts that have emerged from the conceptual map.</p>
+                    <hr>
                 </div>
                 <div class="paragraph">
                     <h4>A definition of AI</h4>
-                    <p>The Singapore government defines artificial intelligence (AI) as "a set of technologies that seek to simulate human traits such as knowledge, reasoning, problem solving, perception, learning and planning, [to] produce an output or decision."<span class="footnoteref">1</span> This set of technologies includes computer vision, machine learning, natural language processing, deep learning and robotics.</p>
-                    <p class="footnote"><span>[1]</span> Personal Data Protection Commission Singapore. (2020). <a href="https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/resource-for-organisation/ai/sgmodelaigovframework2.pdf">Model Artificial Intelligence Governance Framework Second Edition</a>.</p>
+                    <p>The Singapore government defines AI as:</p>
+                        <figure class="quote">
+                            <blockquote>
+                              <q>a set of technologies that seek to simulate human traits such as knowledge, reasoning, problem solving, perception, learning and planning, [to] produce an output or decision.</q>
+                            </blockquote>
+                            <figcaption>
+                              &mdash; Personal Data Protection Commission Singapore (2020), <cite><a href="https://www.pdpc.gov.sg/-/media/files/pdpc/pdf-files/resource-for-organisation/ai/sgmodelaigovframework2.pdf">Model Artificial Intelligence Governance Framework Second Edition</a></cite>
+                            </figcaption>
+                        </figure>
+                    <p>This set of technologies includes computer vision, machine learning, natural language processing, deep learning and robotics. As the capabilities of AI technologies are further acknowledged, a global trend has emerged of governments engaging in AI governance discourse.</p>
                 </div>
                 <div class="paragraph">
-                    <h4>AI Governance</h4>
-                    <p>As the capabilities of AI technologies are further acknowledged, more governments are engaging in AI governance discourse. AI governance discourse seeks to reach consensus on the norms, policies and institutions that manage AI's development, regulation and application. The wide range of actors, priorities, and sentiments that make up the discourse increases the complexity and challenge of reaching this goal.</p>
+                    <h4>Smart Nation to AI Nation</h4>
+                    <p>AI is not an isolated technology. As AI researcher Kate Crawford describes in her latest book <cite><a href="https://yalebooks.yale.edu/book/9780300209570/atlas-ai">Atlas of AI</a></cite>, it is both embedded and material, connected to and dependent on resources, infrastructures and social phenomena. In other words, AI exists within a sociotechnical system and behaves like infrastructure. It is in this context that Singapore’s vision of AI must be examined.</p>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>By 2030, Singapore will be a leader in developing and deploying scalable, impactful AI solutions, in key sectors of high value and relevance to our citizens and businesses.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Smart Nation Singapore (2019), <cite><a href="https://www.smartnation.gov.sg/why-Smart-Nation/NationalAIStrategy">National Artificial Intelligence Strategy</a></cite>
+                        </figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>We will need to aspire to be <q>intelligent to the core</q> and strengthen integration between business operations, people and technology.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Smart Nation Singapore (2014), <cite><a href="https://www.smartnation.gov.sg/docs/default-source/default-document-library/smart-nation-strategy_nov2018.pdf">Smart Nation: The Way Forward, Executive Summary</a></cite>
+                        </figcaption>
+                    </figure>
+                    <p>This sociotechnical system has been referred to as the <q>smart city</q>, <q>surveillance capitalism</q>, and the <q>digital economy</q> by various scholars. It is characterised by networked infrastructures that enable information sharing and digitalisation of services at scale, a process that media scholar José van Dicjk has termed <q>datafication</q>.</p>
+                    <p>Noticeably, the smart city has been particularly effective in capturing the imaginaries of governments as the solution to their societal ailments and source of political legitimacy, Singapore being no exception. As such, the World Economic Forum has identified the smart city as part of the Fourth Industrial Revolution or Industry 4.0. The Singapore government’s commitment to realise the smart city is laid out in its <cite><a href="https://www.smartnation.gov.sg/docs/default-source/default-document-library/smart-nation-strategy_nov2018.pdf?sfvrsn=3f5c2af8_2">Smart Nation Initiative</a></cite> launched in 2014, though its history can be traced back to Singapore's <cite><a href="https://eresources.nlb.gov.sg/printheritage/detail/7deeea61-df9d-48ea-8409-f045c6729e91.aspx">National Computerisation effort</a></cite> back in the 1980s. What precedes Singapore’s AI strategy is thus a history of smart city policies:</p>
+                    <table class="table table-sm">
+                        <thead>
+                          <tr>
+                            <th scope="col">Quote</th>
+                            <th scope="col">Source</th>
+                            <th scope="col">Office</th>
+                            <th scope="col">Year</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><q>We see the role of Infocomm Media 2025 as enabling and complementing the Singapore Smart Nation vision.</q></td>
+                            <td><cite>Infocomm Media 2025</cite></td>
+                            <td>Government Technology Agency</td>
+                            <td>2015</td>
+                          </tr>
+                          <tr>
+                            <td><q>The S$4.5 billion Industry Transformation Programme will support sectors to transform, and achieve their digitalisation potential, guided by the Industry Transformation Maps for the 23 economic sectors.</q></td>
+                            <td><cite>Digital Economy Framework For Action</cite></td>
+                            <td>Infocomm Media Development Authority</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td><q>The Digital Government Blueprint builds on the foundations laid by previous e-Government master plans.</q></td>
+                            <td><cite>Digital Government Blueprint</cite></td>
+                            <td>Smart Nation and Digital Government Office</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td><q>Unveiled by the HDB in September 2014, the Smart HDB Town Frame- work mapped out the key strategies in introducing smart initiatives to HDB estates.</q></td>
+                            <td><cite>Urban Systems Studies - Technology And The City: Foundation For A Smart Nation</cite></td>
+                            <td>Centre for Liveable Cities</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td><q>The National AI Strategy is a key step in our Smart Nation journey.</q></td>
+                            <td><cite>National Artificial Intelligence Strategy</cite></td>
+                            <td>Smart Nation and Digital Government Office</td>
+                            <td>2019</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <p>However, a sociotechnical system is more than just its material infrastructure but also the culture of trust and belief in the technologies that extract and process phenomena into data. The Singapore government benefits from the trust and confidence the public has in its administration as this translates into trust in the technologies that the Singapore government promotes. The similarities between the government’s technocratic and pragmatic governance and the rationalities of computational thinking also arguably enables society to accept the latter more readily. Under the umbrella of smart nation policies, social policies such as the Digital Readiness Blueprint, further promotes positive attitudes towards technology and innovation, gearing Singaporeans to be more readily accepting of a prescribed AI future, as evidenced by a parliamentary response from Minister for Communications and Information Dr Ibrahim:</p>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>We have set out a digital readiness blueprint to give every Singaporean digital access, which is the means to transact digitally; digital literacy—the skills, attitudes and values of a digital citizen; and digital participation—the ability to make use of technology to improve daily life.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Dr Ibrahim, Minister for Communications and Information (2018), at the Committee of Supply Debate 2018
+                        </figcaption>
+                    </figure>
+                    <p>Hence, the AI strategy of Singapore is not a spontaneously rendered one but built on top of the existing infrastructure of the Smart Nation, which scholars Braun and Joerges have describes as <q>second-order large technical systems</q>, characterised by low capital intensity and flexibility. Far from being stable infrastructures, these characteristics which enable the rapid and ephemeral adoption also increase the risk of unpredictable effects from poorly understood implementation. Without proper regulation and stewardship, AI technologies are far from serving the <q>modern infrastructure ideal</q> of universal service and stability desired by governments.</p>
                 </div>
                 <div class="paragraph">
-                    <h4>The data</h4>
+                    <h4>AI and Work: Outsourcing and Augmentation</h4>
+                    <p>While AI is positioned to influence all spheres of urban life, the potential for AI to transform the nature of work has been particularly emphasised. This is not surprising given the direct influence that work and employment have on livelihood. AI researchers Carter and Nielsen, in this distill <cite><a href="https://distill.pub/2017/aia">article</a></cite>, distinguishes between two models of computation to describe AI systems to understand the relationship between AI and work. Both conceptualisations of AI have been evoked in Singapore’s AI governance discourse.</p>
+                    <p>The first conceptualisation is AI as a cognitive outsourcing model, where the AI functions as an oracle or problem solver, with the assumption that AI’s capabilities exceeds the human’s. The implication then is that the human is replaceable by AI, and this results in anxieties over displacement and devaluation in the workforce, leading to articulations such as:</p>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>Another risk is that new technologies will render many jobs and skills redundant. If we do not keep up with the changes, we might find it difficult to adapt at work, or perhaps even lose our jobs.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Mr Heng, Deputy Prime Minister (2019), at the Smart Nation and U Festival 2019
+                        </figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>And in truth, some of our efforts here in Singapore to accelerate this process could increase the pace at which jobs like yours may be at risk.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Dr Puthucheary, Senior Minister of State (2018), at the CPA Congress 2018
+                        </figcaption>
+                    </figure>
+                    <p>Such anxieties are not without reason, as a significant portion of AI research is devoted to training AI systems to outperform humans and handle outsourced tasks independently. However, it is now largely articulated that AI will not render broad swathes of the workforce obsolete, but instead alter the nature of jobs, and the skills people will need, in the process creating new jobs as well.</p>
+                    <p>This gives way to our the second model of AI that is present in Singapore’s AI governance discourse, the conceptualisation of AI as a cognitive transformation model. Here, AI functions as generative agents of new representations of information. In other words, instead of replacing human cognition, this model of AI seeks to expand and transform human cognition by providing access to solution spaces for the human to explore without being prescriptive, such as described in the Services and Digital Economy Technology Roadmap:</p>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>To enable human-centric services and unlock greater value, workers will need to be augmented with smart machines and tools to make better decisions, be more creative and be stronger.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Infocomm Media Development Authority (2018), <cite><a href="https://www.imda.gov.sg/infocomm-media-landscape/SGDigital/Services-and-Digital-Economy-Technology-Roadmap">Services and Digital Economy Technology Roadmap</a></cite>
+                        </figcaption>
+                    </figure>
+                    <p>The popularity of this model can be attributed to it being more socially palatable, as the person is not removed from the equation of work. However, the implementation of AI-augmented processes presents its own sets of challenges, such as the training of people to work with AI technologies. As Minister-in-Charge of the Smart Nation Initiative Dr Balakrishnan describes:</p>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>[AI] will alter the nature of jobs, and the skills our people will need.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Dr Balakrishnan, Minister-in-Charge of the Smart Nation Initiative (2019), at the Smart City Expo World Congress 2019
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="paragraph">
+                    <h4>Reskilled Workforce</h4>
+                    <p>To address the threat introduced by AI technologies that follow the first conceptualisation model, the Singapore government has developed a significant number of policies under its Smart Nation Initiative:</p>
+                    <table class="table table-sm">
+                        <thead>
+                          <tr>
+                            <th scope="col">Quote</th>
+                            <th scope="col">Source</th>
+                            <th scope="col">Office</th>
+                            <th scope="col">Year</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><q>For the workforce, we advocate direct customised manpower development schemes that are aligned with SkillsFuture Singapore to equip the respective infocomm and media workforce with new knowledge and skills.</q></td>
+                            <td><cite>Infocomm Media 2025</cite></td>
+                            <td>Government Technology Agency</td>
+                            <td>2015</td>
+                          </tr>
+                          <tr>
+                            <td><q>The SG:D movement is our response to digital transformation‚ to help our businesses and workforce prepare for and embrace these possibilities.</q></td>
+                            <td><cite>Digital Economy Framework For Action</cite></td>
+                            <td>Infocomm Media Development Authority</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td><q>The Tech Skills Accelerator (TeSA) is a tripartite initiative by the Government, industry, and NTUC, to build and strengthen the digital workforce for the Singapore economy, and to enhance employability outcomes for individuals in the information and communications technology (ICT) profession.</q></td>
+                            <td><cite>Budget 2018 Together, A Better Future</cite></td>
+                            <td>Ministry of Finance</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td><q>Workforce Singapore (WSG) has put in place sector-specific initiatives to spur workforce transformation (for example, job redesign for the retail, food, and construction sectors).</q></td>
+                            <td><cite>A Guide to Job Redesign In The Age of AI</cite></td>
+                            <td>Infocomm Media Development Authority</td>
+                            <td>2020</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <p>These policies share the same goal of reskilling the workforce and preparing it for an AI-abundant economy, and is exemplary of a cultural shift towards a skill-based workforce of continuous learning.</p>
+                    <p>The Singapore government has frequently articulated its expectation of workers to retrain, reskill through their career to remain relevant and future-ready:</p>
+                    <table class="table table-sm">
+                        <thead>
+                          <tr>
+                            <th scope="col">Quote</th>
+                            <th scope="col">Source</th>
+                            <th scope="col">Office</th>
+                            <th scope="col">Year</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><q>When we get there, what we want to see is a future economy that is innovative, productive and competitive; driven by a future workforce that is adaptable, fully employed and inclusive.</q></td>
+                            <td><cite>Mr Lim, Minister for Manpower, at the Institute of Banking and Finance Distinction Evening 2017</cite></td>
+                            <td>Monetary Authority of Singapore</td>
+                            <td>2017</td>
+                          </tr>
+                          <tr>
+                            <td><q>While we acknowledge that there are fears and anxieties surrounding the use of technology, the speed at which we become a Digital Society is dependent on how quickly we are able to adapt.</q></td>
+                            <td><cite>Smart Nation: The Way Forward, Executive Summary</cite></td>
+                            <td>Smart Nation Singapore</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td><q>This is aligned with Singapore’s broader efforts to upskill and reskill our workforce to remain relevant and be future-ready as jobs are reshaped by technology.</q></td>
+                            <td><cite>Mr Heng, Minister for Finance, at the 15th Singapore International Reinsurance Conference</cite></td>
+                            <td>Monetary Authority of Singapore</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td><q>Retrain, reskill throughout your career. If you want to change careers, we also have schemes like Career Trial, Place-and-Train, and Professional Conversion Programmes (PCP).</q></td>
+                            <td><cite>Prime Minister Lee at May Day Rally 2018</cite></td>
+                            <td>Prime Minister's Office</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td><q>This requires the Government to significantly re-engineer ourselves to be one that is lean, agile and future-ready.</q></td>
+                            <td><cite>Digital Government Blueprint</cite></td>
+                            <td>Smart Nation and Digital Government Office</td>
+                            <td>2018</td>
+                          </tr>
+                          <tr>
+                            <td><q>We have a responsibility to help our people to upskill and re-skill to be equipped for jobs of the future.</q></td>
+                            <td><cite>Dr Vivian Balakrishnan, Minister for Foreign Affairs, at the General Debate of the 75th United Nations General Assembly</cite></td>
+                            <td>Ministry of Foreign Affairs</td>
+                            <td>2020</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                    <p>When workers are expected to behave like entrepreneurs—taking initiative to self-innovate and have passion to flourish in a rapidly changing labour market—emphasis on individual responsibility deflects attention from the responsibility of government and an unprotected labour market. This creates new risks of exploitation through deception and opportunism. The increased association of values between self-improvement and one’s labour productivity also makes it more difficult for workers to discern exploitative labour.</p>
+                    <p>Furthermore, a commitment to re-skill the workforce does not translate into guaranteed labour mobility. The Singapore government has acknowledged this by establishing train-to-hire pipelines that supports the individual through the training and hiring process, e.g. the <cite><a href="https://www.wsg.gov.sg/programmes-and-initiatives/professional-conversion-programmes-individuals.html">Professional Conversion Programme (PCP)</a></cite> led by Workforce Singapore (WSG). However, such programs do not benefit all workers equally. It is well-established that unconscious bias exists in hiring in the tech industry, and training pipelines are insufficient in removing race-, gender-, and class-based assumptions about technical roles, as evidenced by smart cities scholar Sreela Sarkar's <cite><a href="https://scholarcommons.scu.edu/comm/44/">study</a></cite> on women in Seelampur. In fact, such pipelines potentially amplifies inequalities in the workforce as they push the responsibility of diversity to the individual and their ability to pass through the pipeline. In order to ensure equal opportunity in the transformed workforce, policies need to address these sources of bias.</p>
+                </div>
+                <div class="paragraph">
+                    <h4>Augmented Workforce</h4>
+                    <p>The commitment to augment the workforce through AI requires addressing challenges of human-AI collaboration. Cognitive scholar Jason Burton identifies this as the problem of cognitive compatibility, referring to the alignment of human and AI decision processes in AI-augmented work, without which the AI’s capabilities would clash with rather than engage with human capabilities, e.g. an AI providing a recommendation that is not comprehensible. The Singapore government approaches this problem from both ends, pushing for the design of explainable and transparent AI systems with its <cite><a href="https://www.pdpc.gov.sg/Help-and-Resources/2020/01/Model-AI-Governance-Framework">Model AI Governance Framework</a> (Model Framework)</cite>, as well as promoting technological literacy through efforts such as:</p>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>We aim to train 2,500 workers within the next three years through this programme. Singapore also aims to train 25,000 professionals in basic AI coding and implementation by 2025.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Mr Heng, Deputy Prime Minister (2019), at the Singapore Fintech Festival X Singapore Week of Innovation and Technology 2019
+                        </figcaption>
+                    </figure>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>[GovTech] is committed to train 20,000 public officers in data science and analytics competency, with all officers possessing basic digital literacy by 2023.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Smart Nation Singapore (2014), <cite><a href="https://www.tech.gov.sg/digital-government-blueprint/">Digital Government Blueprint</a></cite>
+                        </figcaption>
+                    </figure>
+                    <p>Closely associated with AI-augmented work, the concept of <q>human-in-the-loop</q> also weighs heavily in Singapore’s AI governance discourse, referring to AI systems where humans have the opportunity to determine the inputs, make corrections, or veto outcomes. Sociologist Paola Tubaro distinguishes three roles which humans play in supporting artificial intelligence: as trainer, verifier, and imitator. The first two of these roles are present in Singapore’s AI governance discourse. The first role relates to the collection of data and construction of the AI model, with careers such as data engineers, data labellers, and machine learning engineers, which as discussed above, the Singapore government has invested heavily in production. The second role relates to human oversight and governance structures, realised through management roles, e.g. chief data officer, chief privacy officer (from the <cite><a href="https://www.tech.gov.sg/digital-government-blueprint/">Digital Government Blueprint</a></cite>), or management infrastructures such as the <cite><a href="https://www.tech.gov.sg/products-and-services/singapore-government-tech-stack/">Singapore Government Tech Stack (SGTS)</a></cite>. Human-in-the-loop processes are vital to the maintenance of trust in AI systems, and these sentiments are articulated through policies such as the <cite><a href="https://www.pdpc.gov.sg/Help-and-Resources/2020/01/Model-AI-Governance-Framework">Model Framework</a></cite> which as Minister-in-Charge of the Smart Nation Initiative Dr Balakrishnan describes, serves as <q>strong AI governance structure[s], to ensure that new abilities are used responsibly, that risks are managed appropriately, and public trust is maintained</q>.</p>
+                    <p>An unaddressed aspect of <q>human-in-the-loop</q> however, is the susceptibility of its labour to be concealed and under-acknowledged, what sociologist Arlene Daniels has called <q>invisible work</q> and anthropologist Mary L. Gray describes as <q>ghost work</q>. Unregulated and invisible forms of work are often dehumanising, exploitive and precarious, with workers underpaid and having little job security. These risk are further amplified by the turn to a skill-based workforce that is accompanied by a composition shift towards more freelancing and contractual work, as described by a <cite>McKinsey <a href="https://www.mckinsey.com/featured-insights/future-of-work/skill-shift-automation-and-the-future-of-the-workforce"> paper</a></cite> on workforce automation. The present state of Singapore’s AI governance discourse fails to address protective measures for <q>human-in-the-loop</q> labour.</p>
+                </div>
+                <div class="paragraph">
+                    <h4>A Human-Centric AI Future</h4>
+                    <p>Even as the Singapore government commits to a pro-AI future, it maintains taking a <q>human-centric approach to AI</q>.</p>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>People must always be at the heart of how we use technology. This means taking a human-centric approach to the application of technology, and ensuring workers are skilled in the use of new technology.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Mr Heng, Deputy Prime Minister (2019), at the Singapore Fintech Festival X Singapore Week of Innovation and Technology 2019
+                        </figcaption>
+                    </figure>
+                    <p>This refers to developing AI solutions that are <q>fair, transparent and accountable</q>, <q>builds and sustains public trust</q>, and brings <q>tangible benefits to citizens and businesses</q>.</p>
+                    <table class="table table-sm">
+                        <thead>
+                          <tr>
+                            <th scope="col">Quote</th>
+                            <th scope="col">Source</th>
+                            <th scope="col">Office</th>
+                            <th scope="col">Year</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><q>By adopting the model framework, companies will be putting into practice, fair, transparent and accountable AI that is human-centric.</q></td>
+                            <td><cite>Mr Leong Keng Thai, DPAC Executive Chairman, at Tsinghua University School of Law</cite></td>
+                            <td>Personal Data Protection Commission Singapore</td>
+                            <td>2019</td>
+                          </tr>
+                          <tr>
+                            <td><q>They epitomise our plans to develop a human-centric approach towards AI governance that builds and sustains public trust.</q></td>
+                            <td><cite>Model Artificial Intelligence Governance Framework Second Edition</cite></td>
+                            <td>Infocomm Media Development Authority</td>
+                            <td>2020</td>
+                          </tr>
+                          <tr>
+                            <td><q>We will continue to take a human-centric approach to AI to bring tangible benefits to citizens and businesses.</q></td>
+                            <td><cite>Dr Balakrishnan, Minister-in-charge Of The Smart Nation Initiative, at the Committee Of Supply Debate 2020</cite></td>
+                            <td>Smart Nation and Digital Government Office</td>
+                            <td>2020</td>
+                          </tr>
+                        </tbody>
+                    </table> 
+                    <p>Towards ensuring equal and sustained benefit, Minister-in-Charge of the Smart Nation Initiative Dr Balakrishnan has announced plans to create accessible digital infrastructure, and access to technical expertise and guidance through programmes such as the <cite>Chief Technology Officer-as-a-Service (CTOaaS) <a href="https://www.imda.gov.sg/programme-listing/smes-go-digital/CTOaaS">initiative</a></cite>, setting up the sociotechnical environment for AI to be prevalent in every aspect of urban life in Singapore.</p>
+                    <p>The theme of beneficence, that Singaporeans will ultimately benefit from AI-powered Singapore, is reflected often in the data to justify the various proposals and solutions that make up Singapore’s AI strategy. For example:</p>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>Society 5.0 is a vision of a smart city, where innovations like the Internet of Things, big data, artificial intelligence and robotics are used to develop solutions for better human life.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Mr Heng, Minister for Finance (2018), at the Singapore Symposium 2018
+                        </figcaption>
+                    </figure>
+                    <p>Such claims should be understood as aspirational and not prescriptive. They should be closely examined in relation to the lived experience of residents in the city. Thus far, the benefits and risks of AI are unevenly distributed, and decisions are made without public understanding or deliberation. The Singapore government has even described its own country as a <q>testbed</q> for releasing technologies when their broad social implications are poorly understood.</p>
+                    <figure class="quote">
+                        <blockquote>
+                          <q>Singapore, being the top global performer in smart cities, is an excellent living lab to testbed technologies. For companies looking to drive bottom-line growth, such environments open opportunities for various industry players to test technology readiness, community adoption, and economic viability of smart city solutions.</q>
+                        </blockquote>
+                        <figcaption>
+                          &mdash; Economic Development Board (2021), <cite><a href="https://www.edb.gov.sg/en/business-insights/insights/singapore-southeast-asia-s-testbed-for-smart-city-solutions.html">Singapore: Southeast Asia's testbed for smart city solutions</a></cite>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="paragraph">
+                    <h4>What now?</h4>
+                    <p>Singapore’s AI vision is not far off into the future, with most targets to be achieved by 2030. There is an urgency then to incorporate diverse perspectives and disciplines in order to understand the short and long-term effects of AI presence in Singapore’s social and economic institutions. Singaporeans should closely examine what does a future of AI mean for themselves personally, and challenge the government’s broad narrative.</p>
+                    <hr>
+                </div>
+                <div class="paragraph">
+                    <h4>About the data</h4>
                     <p>The data consists of 432 textual sources—comprising 106 documents, 271 speeches and 55 parliamentary Q&As—published by the Singapore government between 2014 to 2021, across 34 different government arms.</p>
-                    <p>Over the years, the increasing publication reflects the growing salience of AI governance discourse.</p>
+                    <p>The Singapore government has been increasingly participating in AI governance discouse </p>
                 </div>
                 <div class='chartContainer'>
                     <canvas id='BarPublicationCount'></canvas>
                 </div>
                 <div class="paragraph">
-                    <p>The diversity of government organisations has also been increasing.</p>
+                    <p>This is also accompanied by increasing diversity of government arms participating in the discourse.</p>
                 </div>
                 <div class='chartContainer'>
                     <canvas id='BarOrgCount'></canvas>
                 </div>
                 <div class="paragraph">
-                    <p>The leading organisation in publications of documents (e.g. white papers, masterplans, and fact sheets) is the Infocomm and Media Development Authority (IMDA) (n = 25), while the the Ministry of Communications and Information (MCI) published the most speeches (n=32) and parliamentary Q&As (n = 10).</p>
+                    <p>The leading office in publications of documents (e.g. white papers, masterplans, and fact sheets) is the Infocomm and Media Development Authority (IMDA) (n = 25), while its parent ministry, the Ministry of Communications and Information (MCI), published the most speeches (n=32) and parliamentary Q&As (n = 10).</p>
                 </div>
                 <div class='chartContainer'>
                     <canvas id='BarOrgType'></canvas>
                 </div>
                 <div class="paragraph">
-                    <h4>Central Words</h4>
-                    <p>Centrality measures were calculated for each word in the semantic network. The most central words were Singapore, work, technology, data and AI.</p>
+                    <h5>Central Words</h5>
+                    <p><i>Singapore, work, technology, data</i> and <i>AI</i> emerged as the most central words.</p>
                 </div>
                 <div class='chartContainer'>
                     <canvas id='ScatterWordCentrality'></canvas>
                 </div>
                 <div class="paragraph">
-                    <h4>Descriptors of AI</h4>
+                    <h5>Descriptors of AI</h5>
                     <p>The ego-centred network constructed around the word AI reveals the embedded nature of AI technologies situated in their sociotechnical environment. From the network, we can see that AI is associated with other technologies such as blockchain, cloud technologies, cybersecurity, sensors, and Internet-of-Things (IoT). Beyond technologies, associations to various domains of urban life also emerge, such as the economy, work, and community.</p>
                 </div>
                 <div class="paragraph">
-                    <h4>Ethical Principles around AI Governance</h4>
-                    <p>Ethical principles that characterise the global landscape of AI governance discourse also appear in Singapore’s AI governance discourse significantly (e.g. responsible, ethical, human, accountable, transparent). Ethical concerns were also present through terms (e.g. challenges, issues, risks) and their associated links (e.g. security, trust). A pro-AI vision of future Singapore is supported by the observation that references to beneficial terms (e.g. good, efficient, safe) outweigh references to maleficence (e.g. bias, harm).</p>
+                    <h5>Ethical Principles around AI Governance</h5>
+                    <p>Ethical principles that appear in Singapore's AI governance discourse (e.g. responsible, ethical, human, accountable, transparent) displays convergence with the global landscape of AI governance discourse. Ethical concerns were also present through terms (e.g. challenges, issues, risks) and their associated links (e.g. security, trust). A pro-AI vision of future Singapore is supported by the observation that references to beneficial terms (e.g. good, efficient, safe) outweigh references to maleficence (e.g. bias, harm).</p>
                 </div>
                 <div class="paragraph">
-                    <h4>Stakeholders of AI Governance</h4>
-                    <p>Businesses, industries and companies surfaced as the main stakeholders in the private sector, from the domains of finance and healthcare. In the private sector, central government bodies include IMDA, GovTech, AISG, and MAS. Persons identified in the semantic network include customers, consumers, citizens, workers, employers, re- searchers, and students. The domain of business and work was observed to weigh heavily on Singapore’s AI governance discourse.</p>
+                    <h5>Stakeholders of AI Governance</h5>
+                    <p>Businesses, industries and companies surfaced as the main stakeholders in the private sector, from the domains of finance and healthcare. In the private sector, central government bodies include IMDA, GovTech, AISG, and MAS. Persons identified in the semantic network include customers, consumers, citizens, workers, employers, researchers, and students. The domain of business and work was observed to weigh heavily on Singapore’s AI governance discourse.</p>
+                    <hr>
                 </div>
-                <!-- <div class="authorship">
+
+                <div class="authorship">
                     <h4>Authorship</h4>
-                    <p>Ivan Chuang, in fulfillment of final thesis for M.Sc. Urban Science, Planning and Policy</br>@ Singapore University of Technology and Design (2021)</p>
-                    <p>Supervised by Professor Lim Sun Sun.</p>
-                </div> -->
+                    <p>Ivan Chuang. An Independent Research Project for the <a href="https://urbanscience.sutd.edu.sg/">MSc. in Urban Science, Policy and Planning</a>, Singapore University of Technology and Design. Supervised by <a href="https://www.sunsunlim.com/">Prof Lim Sun Sun</a>.</p>
+                </div>
             </div>
         </div>
     </body>
