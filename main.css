@@ -135,6 +135,7 @@ select {
     margin-left: 4rem;
     margin-bottom: 8rem;
 }
+
 #backUpContainer {
     position: fixed;
     width: max-content;
@@ -196,8 +197,11 @@ figcaption {
 
 /* mobile styling */
 @media (max-width: 900px) {
+    .content-container {
+        justify-content: center;
+    }
     .content {
-        width: 90%;
-        margin-left: 2rem;
+        width: 90% !important;
+        margin: 0;
     }
 }
