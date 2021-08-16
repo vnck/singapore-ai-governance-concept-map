@@ -145,6 +145,11 @@ select {
 }
 #introHeader {
     font-family: var(--bs-font-sans-serif);
+    text-align: left;
+    padding-bottom: .5rem;
+}
+.nav {
+    padding-bottom: 1.5rem;
 }
 h3 {
     text-decoration: underline;
@@ -180,7 +185,7 @@ figure {
 }
 figure > blockquote {
     margin-left: 1rem;
-    border-left: 4px solid mistyrose;
+    border-left: 4px solid #ffb35c;
     padding-left: 1rem;
     text-align: justify;
     margin-bottom: .8rem;
