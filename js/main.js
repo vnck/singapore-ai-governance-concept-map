@@ -1,8 +1,7 @@
 $(document).ready(() => {
-    $(() => {
-        $('[data-toggle="popover"]').popover({
-            trigger: 'focus'
-        });
+    let popoverTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="popover"]'));
+    popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl, { trigger: 'hover focus' });
     });
     
     $('#titleHeader').on('click', e => {
@@ -16,19 +15,22 @@ $(document).ready(() => {
     });
 
     let sw = true;
+    let $backUpContainer = $("#backUpContainer");
+    let isVisible = false;
     $(window).scroll(() => { 
         if (sw) {
             sw = false;
             setTimeout(() => {
-                if ($(this).scrollTop() > 100) { 
-                    $("#backUpContainer:hidden").css('visibility','visible');   
-                    $("#backUpContainer:hidden").fadeIn('fast');
-                    sw=true;
+                let shouldBeVisible = $(window).scrollTop() > 100;
+                if (shouldBeVisible && !isVisible) { 
+                    $backUpContainer.css('visibility','visible').fadeIn('fast');
+                    isVisible = true;
                 } 
-                else {     
-                    $("#backUpContainer:visible").fadeOut("fast");
-                    sw=true;
+                else if (!shouldBeVisible && isVisible) {     
+                    $backUpContainer.fadeOut("fast");
+                    isVisible = false;
                 }
+                sw = true;
             }, 200);  
         }
     });

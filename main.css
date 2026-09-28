@@ -33,15 +33,12 @@ select {
     font-size: 12px !important;
 }
 .text-outline {
-    text-shadow:
-        -.5px -.5px 0 #FFF,
-        0   -.5px 0 #FFF,
-        .5px -.5px 0 #FFF,
-        .5px  0   0 #FFF,
-        .5px  .5px 0 #FFF,
-        0    .5px 0 #FFF,
-        -.5px  .5px 0 #FFF,
-        -.5px  0   0 #FFF;
+    paint-order: stroke fill;
+    stroke: white;
+    stroke-width: 2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: #111111;
 }
 .accordion-button {
     padding-top: .25rem;

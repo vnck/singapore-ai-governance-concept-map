@@ -1,0 +1,8 @@
+::1 - - [28/Sep/2026 13:42:55] "GET / HTTP/1.1" 200 -
+::1 - - [28/Sep/2026 13:42:55] "GET /main.css HTTP/1.1" 200 -
+::1 - - [28/Sep/2026 13:42:55] "GET /js/chartjs-plugin-datalabels.min.js HTTP/1.1" 200 -
+::1 - - [28/Sep/2026 13:42:55] "GET /js/main.js HTTP/1.1" 200 -
+::1 - - [28/Sep/2026 13:42:55] "GET /js/charts.js HTTP/1.1" 200 -
+::1 - - [28/Sep/2026 13:42:55] "GET /js/graph.js HTTP/1.1" 200 -
+::1 - - [28/Sep/2026 13:42:55] "GET /data/word_centrality_measures.json HTTP/1.1" 200 -
+::1 - - [28/Sep/2026 13:42:55] "GET /data/graph_window2_90p_kcore2_0713.json HTTP/1.1" 200 -

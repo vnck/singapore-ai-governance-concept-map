@@ -115,7 +115,8 @@ let create_graph = () => {
         .force('link', d3.forceLink(links).id(d => d.id));
     
     graph_links = g.append('g')
-        .selectAll('path')
+        .attr('shape-rendering', 'optimizeSpeed')
+        .selectAll('line')
         .data(links, d => d.id);
 
     
@@ -125,16 +126,12 @@ let create_graph = () => {
     
 }
 
-let linkArc = d => {
-    let r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
-    return `
-        M${d.source.x},${d.source.y}
-        A${r},${r} 0 0,1 ${d.target.x},${d.target.y}
-    `;
-}
-
 let ticked = () => {
-    graph_links.attr("d", linkArc);
+    graph_links
+        .attr("x1", d => d.source.x)
+        .attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x)
+        .attr("y2", d => d.target.y);
     graph_nodes.attr("transform", d => `translate(${d.x},${d.y})`);
 }
 
@@ -226,8 +223,7 @@ let update = () => {
     graph_links = graph_links.data(links, d => d.id);
 
     let new_graph_links = graph_links.enter()
-        .append('path')
-        .attr('fill','none')
+        .append('line')
         .attr('stroke', d => edgeWeightColor(d))
         .attr('stroke-width', d => linkWidthScale(d.weight))
         .attr('opacity', d => linkOpacityScale(d.weight));
@@ -245,11 +241,11 @@ let update = () => {
         
     simulation
         .force('link', d3.forceLink(links).id(d => d.id))
-        .force('charge', d3.forceManyBody().strength(d => nodeMeasureScale(d[node_measure]) * forceMultiplier))
+        .force('charge', d3.forceManyBody().strength(d => nodeMeasureScale(d[node_measure]) * forceMultiplier).distanceMax(300).theta(1.2))
         .force('collide',d3.forceCollide(d => nodeMeasureScale(d[node_measure]) + 2))
         .force("center", d3.forceCenter(width/2,height/2));
 
-    simulation.alpha(1).alphaTarget(0).restart();
+    simulation.alphaDecay(0.04).alpha(1).alphaTarget(0).restart();
 }
 
 let filterEgoGraph = (checked) => {
@@ -293,7 +289,7 @@ let updateNodeMeasure = (value) => {
 let updateEdgeColor = (value) => {
     edgeWeightColorSelection = value;
 
-    svg.selectAll('path')
+    svg.selectAll('line')
         .attr('stroke', d => edgeWeightColor(d));
 }
 
